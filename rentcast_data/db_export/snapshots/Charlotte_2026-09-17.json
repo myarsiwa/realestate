@@ -1,0 +1,556 @@
+{
+  "date": "2026-09-17",
+  "listings": [
+    {
+      "address": "9303 Winston Hall Ct, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2460,
+      "sqft": 1885,
+      "zip": "28277"
+    },
+    {
+      "address": "11208 Maplehurst Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2900,
+      "sqft": 2615,
+      "zip": "28277"
+    },
+    {
+      "address": "10730 Coachman Cir, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2550,
+      "sqft": 1957,
+      "zip": "28277"
+    },
+    {
+      "address": "15317 Marvin Rd, Charlotte, NC 28277",
+      "baths": 3,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 4100,
+      "sqft": 3100,
+      "zip": "28277"
+    },
+    {
+      "address": "16013 Caranna Ct, Charlotte, NC 28277",
+      "baths": 4.5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2999,
+      "sqft": 3195,
+      "zip": "28277"
+    },
+    {
+      "address": "6926 Wolf Run Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 3335,
+      "sqft": 3639,
+      "zip": "28277"
+    },
+    {
+      "address": "4318 Woods End Ln, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2700,
+      "sqft": 2100,
+      "zip": "28277"
+    },
+    {
+      "address": "11520 Destin Ln, Charlotte, NC 28277",
+      "baths": 4,
+      "beds": 2,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2099,
+      "sqft": 1889,
+      "zip": "28277"
+    },
+    {
+      "address": "7023 Blakeney Greens Blvd, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 2,
+      "price": 3100,
+      "sqft": 1812,
+      "zip": "28277"
+    },
+    {
+      "address": "6611 Flat Creek Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 2,
+      "price": 2495,
+      "sqft": 1787,
+      "zip": "28277"
+    },
+    {
+      "address": "6803 Flat Creek Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 3,
+      "price": 2400,
+      "sqft": 2164,
+      "zip": "28277"
+    },
+    {
+      "address": "16840 Kettlewell Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 5,
+      "price": 2880,
+      "sqft": 1550,
+      "zip": "28277"
+    },
+    {
+      "address": "11005 Stonepath Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 6,
+      "price": 3500,
+      "sqft": 2745,
+      "zip": "28277"
+    },
+    {
+      "address": "8710 Houston Ridge Rd, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 7,
+      "price": 2600,
+      "sqft": 1922,
+      "zip": "28277"
+    },
+    {
+      "address": "12315 Chesley Dr, Charlotte, NC 28277",
+      "baths": 3.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 8,
+      "price": 3100,
+      "sqft": 2690,
+      "zip": "28277"
+    },
+    {
+      "address": "9416 Graywell Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 9,
+      "price": 2195,
+      "sqft": 1612,
+      "zip": "28277"
+    },
+    {
+      "address": "6712 Coral Rose Rd, Charlotte, NC 28277",
+      "baths": 3,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 9,
+      "price": 3200,
+      "sqft": 2864,
+      "zip": "28277"
+    },
+    {
+      "address": "10420 Alvarado Way, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 10,
+      "price": 2798,
+      "sqft": 2028,
+      "zip": "28277"
+    },
+    {
+      "address": "10724 Alvarado Way, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 13,
+      "price": 2595,
+      "sqft": 2285,
+      "zip": "28277"
+    },
+    {
+      "address": "11731 Charnwood Ct, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 13,
+      "price": 2795,
+      "sqft": 2012,
+      "zip": "28277"
+    },
+    {
+      "address": "6105 Old Corral St, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 14,
+      "price": 3150,
+      "sqft": 1965,
+      "zip": "28277"
+    },
+    {
+      "address": "10423 Alvarado Way, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1292,
+      "price": 2900,
+      "sqft": 2064,
+      "zip": "28277"
+    },
+    {
+      "address": "11604 Charnwood Ct, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1204,
+      "price": 2350,
+      "sqft": 1823,
+      "zip": "28277"
+    },
+    {
+      "address": "11644 James Richard Dr, Charlotte, NC 28277",
+      "baths": 4.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 128,
+      "price": 4835,
+      "sqft": 4575,
+      "zip": "28277"
+    },
+    {
+      "address": "17430 Westmill Ln, Charlotte, NC 28277",
+      "baths": 1,
+      "beds": 1,
+      "city": "Charlotte",
+      "dom": 126,
+      "price": 950,
+      "sqft": 150,
+      "zip": "28277"
+    },
+    {
+      "address": "11701 Charnwood Ct, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 117,
+      "price": 2015,
+      "sqft": 1624,
+      "zip": "28277"
+    },
+    {
+      "address": "11735 Hawick Valley Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 118,
+      "price": 2575,
+      "sqft": 2199,
+      "zip": "28277"
+    },
+    {
+      "address": "11413 Blue Blossom Rd, Charlotte, NC 28277",
+      "baths": 4,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 16,
+      "price": 3350,
+      "sqft": 2843,
+      "zip": "28277"
+    },
+    {
+      "address": "8915 Gamesford Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 21,
+      "price": 2400,
+      "sqft": 1793,
+      "zip": "28277"
+    },
+    {
+      "address": "4811 Old Course Dr, Charlotte, NC 28277",
+      "baths": 3.5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 23,
+      "price": 6900,
+      "sqft": 5194,
+      "zip": "28277"
+    },
+    {
+      "address": "11228 Dickie Ross Rd, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 28,
+      "price": 2330,
+      "sqft": 1354,
+      "zip": "28277"
+    },
+    {
+      "address": "10496 Gunnison Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 107,
+      "price": 3500,
+      "sqft": 3252,
+      "zip": "28277"
+    },
+    {
+      "address": "15640 Sullivan Ridge Dr, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 105,
+      "price": 2675,
+      "sqft": 2002,
+      "zip": "28277"
+    },
+    {
+      "address": "10938 Sedgemoor Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 86,
+      "price": 2700,
+      "sqft": 2696,
+      "zip": "28277"
+    },
+    {
+      "address": "7307 Roseland Ave, Charlotte, NC 28277",
+      "baths": 5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 86,
+      "price": 7450,
+      "sqft": 4011,
+      "zip": "28277"
+    },
+    {
+      "address": "17450 Baldwin Hall Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 32,
+      "price": 2800,
+      "sqft": 2320,
+      "zip": "28277"
+    },
+    {
+      "address": "14810 Provence Ln, Charlotte, NC 28277",
+      "baths": 4,
+      "beds": 6,
+      "city": "Charlotte",
+      "dom": 41,
+      "price": 3500,
+      "sqft": 3000,
+      "zip": "28277"
+    },
+    {
+      "address": "8123 Cornhill Ave, Charlotte, NC 28277",
+      "baths": 3,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 78,
+      "price": 3395,
+      "sqft": 2622,
+      "zip": "28277"
+    },
+    {
+      "address": "5100 Piper Glen Dr, Charlotte, NC 28277",
+      "baths": 7.5,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 75,
+      "price": 9250,
+      "sqft": 7286,
+      "zip": "28277"
+    },
+    {
+      "address": "10620 Fairway Ridge Rd, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 74,
+      "price": 2595,
+      "sqft": 1922,
+      "zip": "28277"
+    },
+    {
+      "address": "10822 Chamberlain Hall Ct, Charlotte, NC 28277",
+      "baths": 3.5,
+      "beds": 6,
+      "city": "Charlotte",
+      "dom": 68,
+      "price": 4500,
+      "sqft": 4764,
+      "zip": "28277"
+    },
+    {
+      "address": "10000 Ridgemore Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 68,
+      "price": 2700,
+      "sqft": 2410,
+      "zip": "28277"
+    },
+    {
+      "address": "15118 Edindale Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 67,
+      "price": 2330,
+      "sqft": 1974,
+      "zip": "28277"
+    },
+    {
+      "address": "12218 Honor Guard Ave, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 58,
+      "price": 2450,
+      "sqft": 2014,
+      "zip": "28277"
+    },
+    {
+      "address": "9606 Fairway Ridge Rd, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 57,
+      "price": 2950,
+      "sqft": 2119,
+      "zip": "28277"
+    },
+    {
+      "address": "6739 Red Maple Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Charlotte",
+      "dom": 58,
+      "price": 2950,
+      "sqft": 2846,
+      "zip": "28277"
+    },
+    {
+      "address": "15569 Stronvar House Ln, Charlotte, NC 28277",
+      "baths": 3,
+      "beds": 2,
+      "city": "Charlotte",
+      "dom": 52,
+      "price": 2950,
+      "sqft": 1615,
+      "zip": "28277"
+    },
+    {
+      "address": "16100 Sunninghill Park Rd, Charlotte, NC 28277",
+      "baths": 4,
+      "beds": 5,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2795,
+      "sqft": 2489,
+      "zip": "28277"
+    },
+    {
+      "address": "12429 Dunford St, Charlotte, NC 28277",
+      "baths": 1,
+      "beds": 1,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 675,
+      "sqft": 1800,
+      "zip": "28277"
+    },
+    {
+      "address": "10318 Mcgoogan Ln, Charlotte, NC 28277",
+      "baths": 1,
+      "beds": 1,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 700,
+      "sqft": 1412,
+      "zip": "28277"
+    },
+    {
+      "address": "6210 Creek Bend Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2399,
+      "sqft": 2230,
+      "zip": "28277"
+    },
+    {
+      "address": "14910 Scothurst Ln, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 1935,
+      "sqft": 1302,
+      "zip": "28277"
+    },
+    {
+      "address": "11634 Charnwood Ct, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2135,
+      "sqft": 1509,
+      "zip": "28277"
+    },
+    {
+      "address": "8903 Darcy Hopkins Dr, Charlotte, NC 28277",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 1,
+      "price": 2699,
+      "sqft": 2390,
+      "zip": "28277"
+    },
+    {
+      "address": "6223 Rosebriar Ln, Charlotte, NC 28277",
+      "baths": 2,
+      "beds": 3,
+      "city": "Charlotte",
+      "dom": 61,
+      "price": 2335,
+      "sqft": 1374,
+      "zip": "28277"
+    }
+  ],
+  "region": "Charlotte"
+}

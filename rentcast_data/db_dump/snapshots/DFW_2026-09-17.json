@@ -1,0 +1,1286 @@
+{
+  "date": "2026-09-17",
+  "listings": [
+    {
+      "address": "2517 Limestone Dr, Arlington, TX 76014",
+      "baths": 1,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1450,
+      "sqft": 1032,
+      "zip": "76014"
+    },
+    {
+      "address": "2860 Ironwood Dr, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 5,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2745,
+      "sqft": 2433,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 722, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2413,
+      "sqft": 1236,
+      "zip": "75052"
+    },
+    {
+      "address": "2100 Ran Ln, Apt 241, Arlington, TX 76013",
+      "baths": 1,
+      "beds": 1,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1084,
+      "sqft": 718,
+      "zip": "76013"
+    },
+    {
+      "address": "2020 Park Springs Blvd, Arlington, TX 76013",
+      "baths": 1,
+      "beds": 1,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1084,
+      "sqft": 718,
+      "zip": "76013"
+    },
+    {
+      "address": "501 Kalmia Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2025,
+      "sqft": 1343,
+      "zip": "76018"
+    },
+    {
+      "address": "2841 Garden Grove Rd, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2645,
+      "sqft": 2328,
+      "zip": "75052"
+    },
+    {
+      "address": "2505 Mesa Glen Dr, Arlington, TX 76001",
+      "baths": 3.5,
+      "beds": 5,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 4150,
+      "sqft": 4513,
+      "zip": "76001"
+    },
+    {
+      "address": "2414 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1076,
+      "zip": "76017"
+    },
+    {
+      "address": "8000 Stowe Springs Ln, Arlington, TX 76002",
+      "baths": 4,
+      "beds": 5,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 3249,
+      "sqft": 4184,
+      "zip": "76002"
+    },
+    {
+      "address": "6517 Forest Park Dr, Arlington, TX 76001",
+      "baths": 3,
+      "beds": 5,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 3049,
+      "sqft": 3139,
+      "zip": "76001"
+    },
+    {
+      "address": "708 Truman St, Apt A, Arlington, TX 76011",
+      "baths": 1,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1595,
+      "sqft": 900,
+      "zip": "76011"
+    },
+    {
+      "address": "9211 Water Oak Dr, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2785,
+      "sqft": 2307,
+      "zip": "76002"
+    },
+    {
+      "address": "6422 Blue Trl, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2499,
+      "sqft": 1721,
+      "zip": "76001"
+    },
+    {
+      "address": "241 Merribrook Trl, Duncanville, TX 75116",
+      "baths": 2,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 1,
+      "price": 1995,
+      "sqft": 1688,
+      "zip": "75116"
+    },
+    {
+      "address": "1829 W Terrace St, Grand Prairie, TX 75050",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2650,
+      "sqft": 1808,
+      "zip": "75050"
+    },
+    {
+      "address": "414 E Grenoble Dr, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2325,
+      "sqft": 1652,
+      "zip": "75052"
+    },
+    {
+      "address": "1209 Avondale Ct, # C, Arlington, TX 76011",
+      "baths": 1,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1200,
+      "sqft": 775,
+      "zip": "76011"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 912, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 2,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2187,
+      "sqft": 960,
+      "zip": "75052"
+    },
+    {
+      "address": "4025 Randy Dr, Apt 129, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1620,
+      "sqft": 1219,
+      "zip": "76013"
+    },
+    {
+      "address": "4000 Woodland Park Blvd, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1900,
+      "sqft": 1418,
+      "zip": "76013"
+    },
+    {
+      "address": "2011 Limestone Dr, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2595,
+      "sqft": 2521,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 712, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 2,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2235,
+      "sqft": 960,
+      "zip": "75052"
+    },
+    {
+      "address": "6427 Blue Trl, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2349,
+      "sqft": 1660,
+      "zip": "76001"
+    },
+    {
+      "address": "2226 Mainsail Ln, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2350,
+      "sqft": 1518,
+      "zip": "76002"
+    },
+    {
+      "address": "104 Varsity Cir, Arlington, TX 76013",
+      "baths": 2.5,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2100,
+      "sqft": 1328,
+      "zip": "76013"
+    },
+    {
+      "address": "6442 Blue Trl, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2349,
+      "sqft": 1660,
+      "zip": "76001"
+    },
+    {
+      "address": "4029 Randy Dr, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1179,
+      "sqft": 1016,
+      "zip": "76013"
+    },
+    {
+      "address": "2317 Garden Park Ct, Arlington, TX 76013",
+      "baths": 2.5,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1700,
+      "sqft": 1493,
+      "zip": "76013"
+    },
+    {
+      "address": "4709 Shadow Crest Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2580,
+      "sqft": 2201,
+      "zip": "76018"
+    },
+    {
+      "address": "203 Kenosha Dr, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2350,
+      "sqft": 1786,
+      "zip": "76002"
+    },
+    {
+      "address": "2404 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1131,
+      "zip": "76017"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 310, Grand Prairie, TX 75052",
+      "baths": 1,
+      "beds": 1,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 1606,
+      "sqft": 637,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 916, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2413,
+      "sqft": 1236,
+      "zip": "75052"
+    },
+    {
+      "address": "2207 Roman Ct, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1850,
+      "sqft": 1200,
+      "zip": "76013"
+    },
+    {
+      "address": "7811 Links Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2700,
+      "sqft": 2347,
+      "zip": "76001"
+    },
+    {
+      "address": "2626 Bennington Ct, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2150,
+      "sqft": 1430,
+      "zip": "75052"
+    },
+    {
+      "address": "1401 Raines St, Arlington, TX 76010",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1350,
+      "sqft": 1139,
+      "zip": "76010"
+    },
+    {
+      "address": "6004 Meadowside Trl, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1900,
+      "sqft": 1578,
+      "zip": "76017"
+    },
+    {
+      "address": "1081 Enfilar Ln, Arlington, TX 76017",
+      "baths": 3,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2495,
+      "sqft": 1404,
+      "zip": "76017"
+    },
+    {
+      "address": "917 Salida Dr, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2575,
+      "sqft": 2816,
+      "zip": "76001"
+    },
+    {
+      "address": "4200 Cranbrook Dr, Arlington, TX 76016",
+      "baths": 2,
+      "beds": 5,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2350,
+      "sqft": 1782,
+      "zip": "76016"
+    },
+    {
+      "address": "6309 Brookmont Ct, Arlington, TX 76018",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2280,
+      "sqft": 1725,
+      "zip": "76018"
+    },
+    {
+      "address": "4217 Glen Hollow Cir, Arlington, TX 76016",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2210,
+      "sqft": 1580,
+      "zip": "76016"
+    },
+    {
+      "address": "7307 Fossil Creek Dr, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2485,
+      "sqft": 1806,
+      "zip": "76002"
+    },
+    {
+      "address": "1104 Havenbrook Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2075,
+      "sqft": 1355,
+      "zip": "76001"
+    },
+    {
+      "address": "709 Greenridge Dr, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2100,
+      "sqft": 1423,
+      "zip": "76017"
+    },
+    {
+      "address": "5122 Eastcreek Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2270,
+      "sqft": 1616,
+      "zip": "76018"
+    },
+    {
+      "address": "2308 Villanova St, Arlington, TX 76018",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2755,
+      "sqft": 2070,
+      "zip": "76018"
+    },
+    {
+      "address": "2321 Clareton Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2090,
+      "sqft": 1444,
+      "zip": "76018"
+    },
+    {
+      "address": "3037 San Martin Dr, Arlington, TX 76010",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2150,
+      "sqft": 1373,
+      "zip": "76010"
+    },
+    {
+      "address": "8011 Mosstree Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2100,
+      "sqft": 1526,
+      "zip": "76001"
+    },
+    {
+      "address": "803 E Timberview Ln, Arlington, TX 76014",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1750,
+      "sqft": 1859,
+      "zip": "76014"
+    },
+    {
+      "address": "816 Castleview Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1895,
+      "sqft": 1182,
+      "zip": "76001"
+    },
+    {
+      "address": "2327 Wise Rd, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2650,
+      "sqft": 2581,
+      "zip": "75052"
+    },
+    {
+      "address": "3700 Pelican Rest Way, Arlington, TX 76005",
+      "baths": 3.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 3050,
+      "sqft": 2145,
+      "zip": "76005"
+    },
+    {
+      "address": "2322 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1300,
+      "zip": "76017"
+    },
+    {
+      "address": "2410 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1061,
+      "zip": "76017"
+    },
+    {
+      "address": "510 Gay St, Arlington, TX 76010",
+      "baths": 2,
+      "beds": 5,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2699,
+      "sqft": 1121,
+      "zip": "76010"
+    },
+    {
+      "address": "5629 Wembley Downs Dr, Arlington, TX 76017",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2440,
+      "sqft": 1844,
+      "zip": "76017"
+    },
+    {
+      "address": "4800 Hollow Tree Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2180,
+      "sqft": 1687,
+      "zip": "76018"
+    },
+    {
+      "address": "2117 Cold Springs Dr, Arlington, TX 76017",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2495,
+      "sqft": 2122,
+      "zip": "76017"
+    },
+    {
+      "address": "5205 Hideaway Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2175,
+      "sqft": 1590,
+      "zip": "76017"
+    },
+    {
+      "address": "2324 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1152,
+      "zip": "76017"
+    },
+    {
+      "address": "8139 Mossberg Dr, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2965,
+      "sqft": 2657,
+      "zip": "76002"
+    },
+    {
+      "address": "6619 Tabor Dr, Arlington, TX 76002",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2975,
+      "sqft": 2690,
+      "zip": "76002"
+    },
+    {
+      "address": "511 Nightshade Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1950,
+      "sqft": 1208,
+      "zip": "76018"
+    },
+    {
+      "address": "2318 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1900,
+      "sqft": 1017,
+      "zip": "76017"
+    },
+    {
+      "address": "618 Ragwood Rd, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2130,
+      "sqft": 1860,
+      "zip": "76002"
+    },
+    {
+      "address": "2703 Blackwood Dr, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2195,
+      "sqft": 1872,
+      "zip": "76013"
+    },
+    {
+      "address": "337 Fort Edward Dr, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2655,
+      "sqft": 2155,
+      "zip": "76002"
+    },
+    {
+      "address": "1214 Hardisty Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2290,
+      "sqft": 1813,
+      "zip": "76001"
+    },
+    {
+      "address": "1108 E Inwood Dr, Arlington, TX 76010",
+      "baths": 1,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1595,
+      "sqft": 906,
+      "zip": "76010"
+    },
+    {
+      "address": "1221 Brooklawn Dr, Arlington, TX 76018",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2095,
+      "sqft": 1606,
+      "zip": "76018"
+    },
+    {
+      "address": "722 Gillon Dr, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2700,
+      "sqft": 2851,
+      "zip": "76001"
+    },
+    {
+      "address": "2406 Kingsford Ct, Arlington, TX 76017",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1799,
+      "sqft": 1131,
+      "zip": "76017"
+    },
+    {
+      "address": "6728 Snapdragon Ln, Arlington, TX 76002",
+      "baths": 2,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2490,
+      "sqft": 1955,
+      "zip": "76002"
+    },
+    {
+      "address": "7928 Raton Ridge Ln, Arlington, TX 76002",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2750,
+      "sqft": 2535,
+      "zip": "76002"
+    },
+    {
+      "address": "807 Raleigh Cir, Arlington, TX 76010",
+      "baths": 1,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1600,
+      "sqft": 865,
+      "zip": "76010"
+    },
+    {
+      "address": "2414 Claremont Dr, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2380,
+      "sqft": 1932,
+      "zip": "75052"
+    },
+    {
+      "address": "3128 Teodoro Dr, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2695,
+      "sqft": 3211,
+      "zip": "75052"
+    },
+    {
+      "address": "121 Wildwood Dr, Duncanville, TX 75137",
+      "baths": 2,
+      "beds": 2,
+      "city": "Duncanville",
+      "dom": 1,
+      "price": 1650,
+      "sqft": 1324,
+      "zip": "75137"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 538, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2891,
+      "sqft": 1236,
+      "zip": "75052"
+    },
+    {
+      "address": "2809 Garden Oaks Pl, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2700,
+      "sqft": 2452,
+      "zip": "75052"
+    },
+    {
+      "address": "902 Pryor Dr, Arlington, TX 76001",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2070,
+      "sqft": 1430,
+      "zip": "76001"
+    },
+    {
+      "address": "4001 Rana Dr, Arlington, TX 76013",
+      "baths": 2,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1900,
+      "sqft": 1418,
+      "zip": "76013"
+    },
+    {
+      "address": "207 Hosack St, Apt A, Arlington, TX 76010",
+      "baths": 1,
+      "beds": 2,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 1100,
+      "sqft": 784,
+      "zip": "76010"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 613, Grand Prairie, TX 75052",
+      "baths": 1,
+      "beds": 1,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 1825,
+      "sqft": 637,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 528, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2760,
+      "sqft": 1236,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 403, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 2,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2375,
+      "sqft": 960,
+      "zip": "75052"
+    },
+    {
+      "address": "3500 S Great Pkwy SW, Apt 506, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 2,
+      "city": "Grand Prairie",
+      "dom": 1,
+      "price": 2281,
+      "sqft": 960,
+      "zip": "75052"
+    },
+    {
+      "address": "6426 Blue Trl, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2349,
+      "sqft": 1660,
+      "zip": "76001"
+    },
+    {
+      "address": "330 E Coral Way, Grand Prairie, TX 75051",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 2,
+      "price": 1610,
+      "sqft": 1448,
+      "zip": "75051"
+    },
+    {
+      "address": "2334 Dartmouth Dr, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 2,
+      "price": 2200,
+      "sqft": 1455,
+      "zip": "75052"
+    },
+    {
+      "address": "843 Ridgecrest Rd, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 2,
+      "price": 2940,
+      "sqft": 2202,
+      "zip": "75052"
+    },
+    {
+      "address": "1030 Stanwyck Ave, Duncanville, TX 75137",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Duncanville",
+      "dom": 3,
+      "price": 2400,
+      "sqft": 2130,
+      "zip": "75137"
+    },
+    {
+      "address": "1106 E Strong Pkwy, Grand Prairie, TX 75050",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 3,
+      "price": 2400,
+      "sqft": 1544,
+      "zip": "75050"
+    },
+    {
+      "address": "2221 Varsity Dr, Grand Prairie, TX 75051",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 3,
+      "price": 2400,
+      "sqft": 1800,
+      "zip": "75051"
+    },
+    {
+      "address": "523 Cooper St, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 4,
+      "price": 3000,
+      "sqft": 2221,
+      "zip": "75052"
+    },
+    {
+      "address": "532 Cooper St, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 4,
+      "price": 3000,
+      "sqft": 2323,
+      "zip": "75052"
+    },
+    {
+      "address": "631 E Cherry St, Duncanville, TX 75116",
+      "baths": 2,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 4,
+      "price": 2250,
+      "sqft": 1812,
+      "zip": "75116"
+    },
+    {
+      "address": "1139 Baja Dr, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 6,
+      "price": 2500,
+      "sqft": 1880,
+      "zip": "75052"
+    },
+    {
+      "address": "427 Ne 38th St, Grand Prairie, TX 75050",
+      "baths": 1,
+      "beds": 2,
+      "city": "Grand Prairie",
+      "dom": 7,
+      "price": 1650,
+      "sqft": 685,
+      "zip": "75050"
+    },
+    {
+      "address": "1110 Cielo Vista Dr, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 7,
+      "price": 1700,
+      "sqft": 1348,
+      "zip": "75052"
+    },
+    {
+      "address": "1034 Gaynor Ave, Duncanville, TX 75137",
+      "baths": 2,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 1139,
+      "price": 2000,
+      "sqft": 1410,
+      "zip": "75137"
+    },
+    {
+      "address": "313 Melorine Dr, Grand Prairie, TX 75051",
+      "baths": 3.5,
+      "beds": 5,
+      "city": "Grand Prairie",
+      "dom": 1101,
+      "price": 9750,
+      "sqft": 3398,
+      "zip": "75051"
+    },
+    {
+      "address": "2136 Dayton Ln, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 997,
+      "price": 7900,
+      "sqft": 2313,
+      "zip": "75052"
+    },
+    {
+      "address": "849 Timberdale St, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 911,
+      "price": 2200,
+      "sqft": 2100,
+      "zip": "75052"
+    },
+    {
+      "address": "2047 El Paso St, Grand Prairie, TX 75051",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 884,
+      "price": 7000,
+      "sqft": 1087,
+      "zip": "75051"
+    },
+    {
+      "address": "626 Wren Ave, Duncanville, TX 75116",
+      "baths": 1.5,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 823,
+      "price": 1850,
+      "sqft": 1031,
+      "zip": "75116"
+    },
+    {
+      "address": "1007 Lamar Ave, Duncanville, TX 75137",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 488,
+      "price": 2450,
+      "sqft": 2106,
+      "zip": "75137"
+    },
+    {
+      "address": "1059 Condor Dr, Grand Prairie, TX 75051",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 353,
+      "price": 2000,
+      "sqft": 1740,
+      "zip": "75051"
+    },
+    {
+      "address": "335 Royal Ave, Duncanville, TX 75137",
+      "baths": 1.5,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 333,
+      "price": 2400,
+      "sqft": 1250,
+      "zip": "75137"
+    },
+    {
+      "address": "1902 Se 4th St, Grand Prairie, TX 75051",
+      "baths": 1,
+      "beds": 1,
+      "city": "Grand Prairie",
+      "dom": 284,
+      "price": 800,
+      "sqft": null,
+      "zip": "75051"
+    },
+    {
+      "address": "2920 Pinehurst, Grand Prairie, TX 75104",
+      "baths": 3.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 284,
+      "price": 3000,
+      "sqft": 3269,
+      "zip": "75104"
+    },
+    {
+      "address": "3410 Country Club Dr, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 5,
+      "city": "Grand Prairie",
+      "dom": 219,
+      "price": 8150,
+      "sqft": 2032,
+      "zip": "75052"
+    },
+    {
+      "address": "223 Linda Ln, Duncanville, TX 75137",
+      "baths": 2,
+      "beds": 4,
+      "city": "Duncanville",
+      "dom": 7,
+      "price": 2665,
+      "sqft": 1932,
+      "zip": "75137"
+    },
+    {
+      "address": "723 Sun Valley Dr, Duncanville, TX 75116",
+      "baths": 1,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 8,
+      "price": 2300,
+      "sqft": 1002,
+      "zip": "75116"
+    },
+    {
+      "address": "902 Wayne Ave, Duncanville, TX 75137",
+      "baths": 2,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 9,
+      "price": 2100,
+      "sqft": 1544,
+      "zip": "75137"
+    },
+    {
+      "address": "6424 Blue Trl, Arlington, TX 76001",
+      "baths": 2.5,
+      "beds": 3,
+      "city": "Arlington",
+      "dom": 1,
+      "price": 2299,
+      "sqft": 1660,
+      "zip": "76001"
+    },
+    {
+      "address": "1019 Cedar Run Dr, Duncanville, TX 75137",
+      "baths": 2,
+      "beds": 3,
+      "city": "Duncanville",
+      "dom": 191,
+      "price": 1850,
+      "sqft": 1469,
+      "zip": "75137"
+    },
+    {
+      "address": "906 Sharpshire St, Grand Prairie, TX 75050",
+      "baths": 1,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 13,
+      "price": 2025,
+      "sqft": 2526,
+      "zip": "75050"
+    },
+    {
+      "address": "2001 San Antonio St, Grand Prairie, TX 75051",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 14,
+      "price": 1895,
+      "sqft": 1311,
+      "zip": "75051"
+    },
+    {
+      "address": "530 Alameda Ave, Duncanville, TX 75137",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Duncanville",
+      "dom": 152,
+      "price": 2345,
+      "sqft": 1762,
+      "zip": "75137"
+    },
+    {
+      "address": "726 Cranbrook Ln, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 14,
+      "price": 1850,
+      "sqft": 2114,
+      "zip": "75052"
+    },
+    {
+      "address": "4551 Durrand Dr, Grand Prairie, TX 75052",
+      "baths": 3.5,
+      "beds": 5,
+      "city": "Grand Prairie",
+      "dom": 15,
+      "price": 3600,
+      "sqft": 3894,
+      "zip": "75052"
+    },
+    {
+      "address": "418 Newberry St, Grand Prairie, TX 75052",
+      "baths": 2.5,
+      "beds": 4,
+      "city": "Grand Prairie",
+      "dom": 17,
+      "price": 2500,
+      "sqft": 1738,
+      "zip": "75052"
+    },
+    {
+      "address": "2035 Matagorda Ln, Grand Prairie, TX 75052",
+      "baths": 2,
+      "beds": 3,
+      "city": "Grand Prairie",
+      "dom": 17,
+      "price": 2450,
+      "sqft": 1983,
+      "zip": "75052"
+    }
+  ],
+  "region": "DFW"
+}

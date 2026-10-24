@@ -1,0 +1,782 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Rent Watch For DFWSMB LLC</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --plane:          #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-dfw:      #2a78d6;
+    --series-dfw-soft: #cde2fb;
+    --series-clt:      #eb6834;
+    --series-clt-soft: #fbdccb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --plane:          #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-dfw:      #3987e5;
+      --series-dfw-soft: #1c3a5c;
+      --series-clt:      #d95926;
+      --series-clt-soft: #5c2e17;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --plane:          #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-dfw:      #3987e5;
+    --series-dfw-soft: #1c3a5c;
+    --series-clt:      #d95926;
+    --series-clt-soft: #5c2e17;
+  }
+
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--plane);
+    color: var(--text-primary);
+    padding: 24px 16px 48px;
+    box-sizing: border-box;
+  }
+  .viz-root * { box-sizing: border-box; }
+  .wrap { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+  header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+  header.top h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--text-secondary); }
+  .meta b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+
+  .quota-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-secondary);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 4px 10px; background: var(--surface-1);
+  }
+  .quota-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--series-dfw); }
+
+  .segmented { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface-1); }
+  .segmented button {
+    appearance: none; border: none; background: transparent; color: var(--text-secondary);
+    font: inherit; font-size: 13px; font-weight: 600; padding: 8px 14px; cursor: pointer;
+    border-right: 1px solid var(--border);
+  }
+  .segmented button:last-child { border-right: none; }
+  .segmented button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); }
+  .segmented button:focus-visible { outline: 2px solid var(--series-dfw); outline-offset: -2px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    appearance: none; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-1);
+    color: var(--text-secondary); font: inherit; font-size: 12.5px; font-weight: 600; padding: 6px 12px; cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--series-dfw-soft); color: var(--text-primary); border-color: var(--series-dfw); }
+  .chip[aria-pressed="true"].clt { background: var(--series-clt-soft); border-color: var(--series-clt); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+  .tile .value { font-size: 24px; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .tile .sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+  .panel h2 { font-size: 14px; font-weight: 700; margin: 0 0 14px; }
+  .panel h2 .n { color: var(--text-muted); font-weight: 500; }
+
+  .chart-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .chart-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+  .barchart-scroll { overflow-x: auto; }
+  svg text { fill: var(--text-secondary); font-size: 11px; font-family: inherit; }
+  svg .axis-label { fill: var(--text-muted); }
+  svg .gridline { stroke: var(--gridline); stroke-width: 1; }
+  svg .baseline { stroke: var(--baseline); stroke-width: 1; }
+  svg .bar-dfw { fill: var(--series-dfw); }
+  svg .bar-clt { fill: var(--series-clt); }
+  svg .valtag { fill: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+  svg .line-dfw { stroke: var(--series-dfw); fill: none; stroke-width: 2; }
+  svg .line-clt { stroke: var(--series-clt); fill: none; stroke-width: 2; }
+  svg .dot-dfw { fill: var(--surface-1); stroke: var(--series-dfw); stroke-width: 2; }
+  svg .dot-clt { fill: var(--surface-1); stroke: var(--series-clt); stroke-width: 2; }
+
+  .table-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .table-controls input[type="search"] {
+    flex: 1 1 200px; min-width: 0; background: var(--plane); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font: inherit; font-size: 13px; color: var(--text-primary);
+  }
+  .table-controls input[type="search"]::placeholder { color: var(--text-muted); }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13px; }
+  thead th {
+    position: sticky; top: 0; background: var(--surface-1); text-align: left; padding: 9px 12px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted);
+    border-bottom: 1px solid var(--border); cursor: pointer; white-space: nowrap; user-select: none;
+  }
+  thead th .arrow { opacity: 0.4; margin-left: 3px; }
+  thead th[aria-sort="ascending"] .arrow, thead th[aria-sort="descending"] .arrow { opacity: 1; color: var(--series-dfw); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  tbody td.price { font-variant-numeric: tabular-nums; font-weight: 600; }
+  tbody td.num { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+  tbody td.addr { white-space: normal; min-width: 220px; color: var(--text-primary); }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--plane); }
+  .region-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-secondary); }
+  .region-tag i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .region-tag.dfw i { background: var(--series-dfw); }
+  .region-tag.clt i { background: var(--series-clt); }
+
+  .empty-row td { text-align: center; color: var(--text-muted); padding: 24px; }
+
+  .house-icon { width: 16px; height: 16px; vertical-align: -2px; margin-right: 6px; fill: none; stroke: var(--text-primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  svg .hood-bubble { stroke: var(--surface-1); stroke-width: 2; cursor: pointer; transition: opacity 0.15s; }
+  svg .hood-bubble:hover { opacity: 0.82; }
+  svg .hood-bubble.dimmed { opacity: 0.25; }
+  svg .hood-count { fill: #fff; font-weight: 700; text-anchor: middle; pointer-events: none; }
+
+  .hood-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin-top: 14px; }
+  .hood-card {
+    text-align: left; border: 1px solid var(--border); border-radius: 14px; background: var(--plane);
+    padding: 12px 14px; cursor: pointer; font: inherit; color: inherit;
+    box-shadow: 0 1px 0 var(--border); transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .hood-card:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+  .hood-card[aria-pressed="true"] { border-color: var(--series-dfw); background: var(--series-dfw-soft); }
+  .hood-card[aria-pressed="true"].clt { border-color: var(--series-clt); background: var(--series-clt-soft); }
+  .hood-card .hood-name { font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+  .hood-card .hood-badge {
+    font-size: 11px; font-weight: 700; border-radius: 999px; padding: 1px 8px; flex-shrink: 0;
+    background: var(--series-dfw); color: #fff;
+  }
+  .hood-card .hood-badge.clt { background: var(--series-clt); }
+  .hood-card .hood-stats { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .hood-clear {
+    grid-column: 1 / -1; text-align: center; font-size: 12.5px; color: var(--series-dfw); font-weight: 600;
+    background: none; border: none; cursor: pointer; padding: 4px; font-family: inherit;
+  }
+
+  footer.note { font-size: 12px; color: var(--text-muted); text-align: center; }
+
+  @media (max-width: 560px) {
+    thead th, tbody td { padding: 8px; font-size: 12px; }
+  }
+</style>
+
+<div class="viz-root">
+  <div class="wrap">
+    <header class="top">
+      <h1>Rent Watch</h1>
+      <div class="quota-badge"><span class="dot"></span> <span id="quotaText">Weekly automated snapshot</span></div>
+    </header>
+    <div class="meta">
+      <span>Latest snapshot: <b id="snapDate"></b></span>
+      <span>Single-family, active listings</span>
+      <span id="totalCount"></span>
+      <span id="historyCount"></span>
+    </div>
+
+    <section class="panel">
+      <h2>Portfolio match <span class="n">— your comps: 3 bed, 2–2.5 bath</span></h2>
+      <div class="table-controls" style="margin-bottom:0">
+        <div class="chips" id="bedChips" role="group" aria-label="Filter by bedrooms"></div>
+        <div class="chips" id="bathChips" role="group" aria-label="Filter by bathrooms"></div>
+      </div>
+    </section>
+
+    <div class="tiles" id="tiles"></div>
+
+    <section class="panel">
+      <h2><svg class="house-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" /></svg>Neighborhoods <span class="n" id="neighborhoodNote">— properties within about a third of a mile of each other, grouped together</span></h2>
+      <div class="barchart-scroll">
+        <svg id="mapChart" viewBox="0 0 680 260" role="img" aria-label="Map of listing clusters by neighborhood, DFW and South Charlotte"></svg>
+      </div>
+      <div class="hood-grid" id="hoodGrid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Median asking rent by bedroom count <span class="n">(full market, unfiltered — for context)</span></h2>
+      <div class="chart-legend">
+        <span><i style="background:var(--series-dfw)"></i>Grand Prairie / Duncanville</span>
+        <span><i style="background:var(--series-clt)"></i>South Charlotte 28277</span>
+      </div>
+      <div class="barchart-scroll">
+        <svg id="chart" viewBox="0 0 680 260" role="img" aria-label="Median asking rent by bedroom count, compared across DFW and South Charlotte"></svg>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Rent trend over time <span class="n">— median, filtered to the bed/bath selection above</span></h2>
+      <div class="chart-legend">
+        <span><i style="background:var(--series-dfw)"></i>Grand Prairie / Duncanville</span>
+        <span><i style="background:var(--series-clt)"></i>South Charlotte 28277</span>
+      </div>
+      <div class="barchart-scroll">
+        <svg id="trendChart" viewBox="0 0 680 220" role="img" aria-label="Median asking rent over time, DFW vs South Charlotte"></svg>
+      </div>
+      <div class="meta" id="trendNote" style="margin-top:8px"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Listings <span class="n" id="tableCount"></span></h2>
+      <div class="table-controls">
+        <div class="segmented" id="regionSeg" role="group" aria-label="Filter by region"></div>
+        <div class="chips" id="cityChips" role="group" aria-label="Filter by city"></div>
+        <input type="search" id="search" placeholder="Search address…" aria-label="Search address">
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th data-key="region">Region<span class="arrow">↕</span></th>
+              <th data-key="city">City<span class="arrow">↕</span></th>
+              <th data-key="address">Address<span class="arrow">↕</span></th>
+              <th data-key="price">Price<span class="arrow">↕</span></th>
+              <th data-key="beds">Bd<span class="arrow">↕</span></th>
+              <th data-key="baths">Ba<span class="arrow">↕</span></th>
+              <th data-key="sqft">Sqft<span class="arrow">↕</span></th>
+              <th data-key="dom">DOM<span class="arrow">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="note">Data via RentCast API · A scheduled cloud agent pulls a fresh snapshot for each region weekly</footer>
+  </div>
+</div>
+
+<script>
+(async function () {
+  var SEED_SNAPSHOTS = [{"region": "DFW", "date": "2026-09-17", "listings": [{"city": "Arlington", "address": "2517 Limestone Dr, Arlington, TX 76014", "zip": "76014", "price": 1450.0, "beds": 2.0, "baths": 1.0, "sqft": 1032.0, "dom": 1}, {"city": "Grand Prairie", "address": "2860 Ironwood Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2745.0, "beds": 5.0, "baths": 2.5, "sqft": 2433.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 722, Grand Prairie, TX 75052", "zip": "75052", "price": 2413.0, "beds": 3.0, "baths": 2.0, "sqft": 1236.0, "dom": 1}, {"city": "Arlington", "address": "2100 Ran Ln, Apt 241, Arlington, TX 76013", "zip": "76013", "price": 1084.0, "beds": 1.0, "baths": 1.0, "sqft": 718.0, "dom": 1}, {"city": "Arlington", "address": "2020 Park Springs Blvd, Arlington, TX 76013", "zip": "76013", "price": 1084.0, "beds": 1.0, "baths": 1.0, "sqft": 718.0, "dom": 1}, {"city": "Arlington", "address": "501 Kalmia Dr, Arlington, TX 76018", "zip": "76018", "price": 2025.0, "beds": 3.0, "baths": 2.0, "sqft": 1343.0, "dom": 1}, {"city": "Grand Prairie", "address": "2841 Garden Grove Rd, Grand Prairie, TX 75052", "zip": "75052", "price": 2645.0, "beds": 3.0, "baths": 2.0, "sqft": 2328.0, "dom": 1}, {"city": "Arlington", "address": "2505 Mesa Glen Dr, Arlington, TX 76001", "zip": "76001", "price": 4150.0, "beds": 5.0, "baths": 3.5, "sqft": 4513.0, "dom": 1}, {"city": "Arlington", "address": "2414 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1076.0, "dom": 1}, {"city": "Arlington", "address": "8000 Stowe Springs Ln, Arlington, TX 76002", "zip": "76002", "price": 3249.0, "beds": 5.0, "baths": 4.0, "sqft": 4184.0, "dom": 1}, {"city": "Arlington", "address": "6517 Forest Park Dr, Arlington, TX 76001", "zip": "76001", "price": 3049.0, "beds": 5.0, "baths": 3.0, "sqft": 3139.0, "dom": 1}, {"city": "Arlington", "address": "708 Truman St, Apt A, Arlington, TX 76011", "zip": "76011", "price": 1595.0, "beds": 2.0, "baths": 1.0, "sqft": 900.0, "dom": 1}, {"city": "Arlington", "address": "9211 Water Oak Dr, Arlington, TX 76002", "zip": "76002", "price": 2785.0, "beds": 4.0, "baths": 2.0, "sqft": 2307.0, "dom": 1}, {"city": "Arlington", "address": "6422 Blue Trl, Arlington, TX 76001", "zip": "76001", "price": 2499.0, "beds": 4.0, "baths": 2.5, "sqft": 1721.0, "dom": 1}, {"city": "Duncanville", "address": "241 Merribrook Trl, Duncanville, TX 75116", "zip": "75116", "price": 1995.0, "beds": 3.0, "baths": 2.0, "sqft": 1688.0, "dom": 1}, {"city": "Grand Prairie", "address": "1829 W Terrace St, Grand Prairie, TX 75050", "zip": "75050", "price": 2650.0, "beds": 3.0, "baths": 2.0, "sqft": 1808.0, "dom": 1}, {"city": "Grand Prairie", "address": "414 E Grenoble Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2325.0, "beds": 3.0, "baths": 2.0, "sqft": 1652.0, "dom": 1}, {"city": "Arlington", "address": "1209 Avondale Ct, # C, Arlington, TX 76011", "zip": "76011", "price": 1200.0, "beds": 2.0, "baths": 1.0, "sqft": 775.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 912, Grand Prairie, TX 75052", "zip": "75052", "price": 2187.0, "beds": 2.0, "baths": 2.0, "sqft": 960.0, "dom": 1}, {"city": "Arlington", "address": "4025 Randy Dr, Apt 129, Arlington, TX 76013", "zip": "76013", "price": 1620.0, "beds": 2.0, "baths": 2.0, "sqft": 1219.0, "dom": 1}, {"city": "Arlington", "address": "4000 Woodland Park Blvd, Arlington, TX 76013", "zip": "76013", "price": 1900.0, "beds": 3.0, "baths": 2.0, "sqft": 1418.0, "dom": 1}, {"city": "Grand Prairie", "address": "2011 Limestone Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2595.0, "beds": 4.0, "baths": 2.5, "sqft": 2521.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 712, Grand Prairie, TX 75052", "zip": "75052", "price": 2235.0, "beds": 2.0, "baths": 2.0, "sqft": 960.0, "dom": 1}, {"city": "Arlington", "address": "6427 Blue Trl, Arlington, TX 76001", "zip": "76001", "price": 2349.0, "beds": 3.0, "baths": 2.5, "sqft": 1660.0, "dom": 1}, {"city": "Arlington", "address": "2226 Mainsail Ln, Arlington, TX 76002", "zip": "76002", "price": 2350.0, "beds": 3.0, "baths": 2.0, "sqft": 1518.0, "dom": 1}, {"city": "Arlington", "address": "104 Varsity Cir, Arlington, TX 76013", "zip": "76013", "price": 2100.0, "beds": 2.0, "baths": 2.5, "sqft": 1328.0, "dom": 1}, {"city": "Arlington", "address": "6442 Blue Trl, Arlington, TX 76001", "zip": "76001", "price": 2349.0, "beds": 3.0, "baths": 2.5, "sqft": 1660.0, "dom": 1}, {"city": "Arlington", "address": "4029 Randy Dr, Arlington, TX 76013", "zip": "76013", "price": 1179.0, "beds": 2.0, "baths": 2.0, "sqft": 1016.0, "dom": 1}, {"city": "Arlington", "address": "2317 Garden Park Ct, Arlington, TX 76013", "zip": "76013", "price": 1700.0, "beds": 2.0, "baths": 2.5, "sqft": 1493.0, "dom": 1}, {"city": "Arlington", "address": "4709 Shadow Crest Dr, Arlington, TX 76018", "zip": "76018", "price": 2580.0, "beds": 4.0, "baths": 2.0, "sqft": 2201.0, "dom": 1}, {"city": "Arlington", "address": "203 Kenosha Dr, Arlington, TX 76002", "zip": "76002", "price": 2350.0, "beds": 3.0, "baths": 2.0, "sqft": 1786.0, "dom": 1}, {"city": "Arlington", "address": "2404 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1131.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 310, Grand Prairie, TX 75052", "zip": "75052", "price": 1606.0, "beds": 1.0, "baths": 1.0, "sqft": 637.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 916, Grand Prairie, TX 75052", "zip": "75052", "price": 2413.0, "beds": 3.0, "baths": 2.0, "sqft": 1236.0, "dom": 1}, {"city": "Arlington", "address": "2207 Roman Ct, Arlington, TX 76013", "zip": "76013", "price": 1850.0, "beds": 3.0, "baths": 2.0, "sqft": 1200.0, "dom": 1}, {"city": "Arlington", "address": "7811 Links Dr, Arlington, TX 76001", "zip": "76001", "price": 2700.0, "beds": 4.0, "baths": 2.0, "sqft": 2347.0, "dom": 1}, {"city": "Grand Prairie", "address": "2626 Bennington Ct, Grand Prairie, TX 75052", "zip": "75052", "price": 2150.0, "beds": 3.0, "baths": 2.0, "sqft": 1430.0, "dom": 1}, {"city": "Arlington", "address": "1401 Raines St, Arlington, TX 76010", "zip": "76010", "price": 1350.0, "beds": 4.0, "baths": 2.0, "sqft": 1139.0, "dom": 1}, {"city": "Arlington", "address": "6004 Meadowside Trl, Arlington, TX 76017", "zip": "76017", "price": 1900.0, "beds": 3.0, "baths": 2.0, "sqft": 1578.0, "dom": 1}, {"city": "Arlington", "address": "1081 Enfilar Ln, Arlington, TX 76017", "zip": "76017", "price": 2495.0, "beds": 3.0, "baths": 3.0, "sqft": 1404.0, "dom": 1}, {"city": "Arlington", "address": "917 Salida Dr, Arlington, TX 76001", "zip": "76001", "price": 2575.0, "beds": 4.0, "baths": 2.5, "sqft": 2816.0, "dom": 1}, {"city": "Arlington", "address": "4200 Cranbrook Dr, Arlington, TX 76016", "zip": "76016", "price": 2350.0, "beds": 5.0, "baths": 2.0, "sqft": 1782.0, "dom": 1}, {"city": "Arlington", "address": "6309 Brookmont Ct, Arlington, TX 76018", "zip": "76018", "price": 2280.0, "beds": 3.0, "baths": 2.5, "sqft": 1725.0, "dom": 1}, {"city": "Arlington", "address": "4217 Glen Hollow Cir, Arlington, TX 76016", "zip": "76016", "price": 2210.0, "beds": 3.0, "baths": 2.5, "sqft": 1580.0, "dom": 1}, {"city": "Arlington", "address": "7307 Fossil Creek Dr, Arlington, TX 76002", "zip": "76002", "price": 2485.0, "beds": 3.0, "baths": 2.0, "sqft": 1806.0, "dom": 1}, {"city": "Arlington", "address": "1104 Havenbrook Dr, Arlington, TX 76001", "zip": "76001", "price": 2075.0, "beds": 3.0, "baths": 2.0, "sqft": 1355.0, "dom": 1}, {"city": "Arlington", "address": "709 Greenridge Dr, Arlington, TX 76017", "zip": "76017", "price": 2100.0, "beds": 3.0, "baths": 2.0, "sqft": 1423.0, "dom": 1}, {"city": "Arlington", "address": "5122 Eastcreek Dr, Arlington, TX 76018", "zip": "76018", "price": 2270.0, "beds": 3.0, "baths": 2.0, "sqft": 1616.0, "dom": 1}, {"city": "Arlington", "address": "2308 Villanova St, Arlington, TX 76018", "zip": "76018", "price": 2755.0, "beds": 3.0, "baths": 2.5, "sqft": 2070.0, "dom": 1}, {"city": "Arlington", "address": "2321 Clareton Dr, Arlington, TX 76018", "zip": "76018", "price": 2090.0, "beds": 3.0, "baths": 2.0, "sqft": 1444.0, "dom": 1}, {"city": "Arlington", "address": "3037 San Martin Dr, Arlington, TX 76010", "zip": "76010", "price": 2150.0, "beds": 3.0, "baths": 2.0, "sqft": 1373.0, "dom": 1}, {"city": "Arlington", "address": "8011 Mosstree Dr, Arlington, TX 76001", "zip": "76001", "price": 2100.0, "beds": 3.0, "baths": 2.0, "sqft": 1526.0, "dom": 1}, {"city": "Arlington", "address": "803 E Timberview Ln, Arlington, TX 76014", "zip": "76014", "price": 1750.0, "beds": 3.0, "baths": 2.0, "sqft": 1859.0, "dom": 1}, {"city": "Arlington", "address": "816 Castleview Dr, Arlington, TX 76001", "zip": "76001", "price": 1895.0, "beds": 3.0, "baths": 2.0, "sqft": 1182.0, "dom": 1}, {"city": "Grand Prairie", "address": "2327 Wise Rd, Grand Prairie, TX 75052", "zip": "75052", "price": 2650.0, "beds": 4.0, "baths": 2.0, "sqft": 2581.0, "dom": 1}, {"city": "Arlington", "address": "3700 Pelican Rest Way, Arlington, TX 76005", "zip": "76005", "price": 3050.0, "beds": 3.0, "baths": 3.5, "sqft": 2145.0, "dom": 1}, {"city": "Arlington", "address": "2322 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1300.0, "dom": 1}, {"city": "Arlington", "address": "2410 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1061.0, "dom": 1}, {"city": "Arlington", "address": "510 Gay St, Arlington, TX 76010", "zip": "76010", "price": 2699.0, "beds": 5.0, "baths": 2.0, "sqft": 1121.0, "dom": 1}, {"city": "Arlington", "address": "5629 Wembley Downs Dr, Arlington, TX 76017", "zip": "76017", "price": 2440.0, "beds": 4.0, "baths": 2.5, "sqft": 1844.0, "dom": 1}, {"city": "Arlington", "address": "4800 Hollow Tree Dr, Arlington, TX 76018", "zip": "76018", "price": 2180.0, "beds": 3.0, "baths": 2.0, "sqft": 1687.0, "dom": 1}, {"city": "Arlington", "address": "2117 Cold Springs Dr, Arlington, TX 76017", "zip": "76017", "price": 2495.0, "beds": 3.0, "baths": 2.5, "sqft": 2122.0, "dom": 1}, {"city": "Arlington", "address": "5205 Hideaway Ct, Arlington, TX 76017", "zip": "76017", "price": 2175.0, "beds": 3.0, "baths": 2.0, "sqft": 1590.0, "dom": 1}, {"city": "Arlington", "address": "2324 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1152.0, "dom": 1}, {"city": "Arlington", "address": "8139 Mossberg Dr, Arlington, TX 76002", "zip": "76002", "price": 2965.0, "beds": 3.0, "baths": 2.0, "sqft": 2657.0, "dom": 1}, {"city": "Arlington", "address": "6619 Tabor Dr, Arlington, TX 76002", "zip": "76002", "price": 2975.0, "beds": 4.0, "baths": 2.5, "sqft": 2690.0, "dom": 1}, {"city": "Arlington", "address": "511 Nightshade Dr, Arlington, TX 76018", "zip": "76018", "price": 1950.0, "beds": 3.0, "baths": 2.0, "sqft": 1208.0, "dom": 1}, {"city": "Arlington", "address": "2318 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1900.0, "beds": 3.0, "baths": 2.0, "sqft": 1017.0, "dom": 1}, {"city": "Arlington", "address": "618 Ragwood Rd, Arlington, TX 76002", "zip": "76002", "price": 2130.0, "beds": 3.0, "baths": 2.0, "sqft": 1860.0, "dom": 1}, {"city": "Arlington", "address": "2703 Blackwood Dr, Arlington, TX 76013", "zip": "76013", "price": 2195.0, "beds": 3.0, "baths": 2.0, "sqft": 1872.0, "dom": 1}, {"city": "Arlington", "address": "337 Fort Edward Dr, Arlington, TX 76002", "zip": "76002", "price": 2655.0, "beds": 3.0, "baths": 2.0, "sqft": 2155.0, "dom": 1}, {"city": "Arlington", "address": "1214 Hardisty Dr, Arlington, TX 76001", "zip": "76001", "price": 2290.0, "beds": 3.0, "baths": 2.0, "sqft": 1813.0, "dom": 1}, {"city": "Arlington", "address": "1108 E Inwood Dr, Arlington, TX 76010", "zip": "76010", "price": 1595.0, "beds": 3.0, "baths": 1.0, "sqft": 906.0, "dom": 1}, {"city": "Arlington", "address": "1221 Brooklawn Dr, Arlington, TX 76018", "zip": "76018", "price": 2095.0, "beds": 4.0, "baths": 2.0, "sqft": 1606.0, "dom": 1}, {"city": "Arlington", "address": "722 Gillon Dr, Arlington, TX 76001", "zip": "76001", "price": 2700.0, "beds": 4.0, "baths": 2.5, "sqft": 2851.0, "dom": 1}, {"city": "Arlington", "address": "2406 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "price": 1799.0, "beds": 3.0, "baths": 2.0, "sqft": 1131.0, "dom": 1}, {"city": "Arlington", "address": "6728 Snapdragon Ln, Arlington, TX 76002", "zip": "76002", "price": 2490.0, "beds": 4.0, "baths": 2.0, "sqft": 1955.0, "dom": 1}, {"city": "Arlington", "address": "7928 Raton Ridge Ln, Arlington, TX 76002", "zip": "76002", "price": 2750.0, "beds": 4.0, "baths": 2.5, "sqft": 2535.0, "dom": 1}, {"city": "Arlington", "address": "807 Raleigh Cir, Arlington, TX 76010", "zip": "76010", "price": 1600.0, "beds": 3.0, "baths": 1.0, "sqft": 865.0, "dom": 1}, {"city": "Grand Prairie", "address": "2414 Claremont Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2380.0, "beds": 4.0, "baths": 2.5, "sqft": 1932.0, "dom": 1}, {"city": "Grand Prairie", "address": "3128 Teodoro Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2695.0, "beds": 4.0, "baths": 2.5, "sqft": 3211.0, "dom": 1}, {"city": "Duncanville", "address": "121 Wildwood Dr, Duncanville, TX 75137", "zip": "75137", "price": 1650.0, "beds": 2.0, "baths": 2.0, "sqft": 1324.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 538, Grand Prairie, TX 75052", "zip": "75052", "price": 2891.0, "beds": 3.0, "baths": 2.0, "sqft": 1236.0, "dom": 1}, {"city": "Grand Prairie", "address": "2809 Garden Oaks Pl, Grand Prairie, TX 75052", "zip": "75052", "price": 2700.0, "beds": 4.0, "baths": 2.5, "sqft": 2452.0, "dom": 1}, {"city": "Arlington", "address": "902 Pryor Dr, Arlington, TX 76001", "zip": "76001", "price": 2070.0, "beds": 3.0, "baths": 2.0, "sqft": 1430.0, "dom": 1}, {"city": "Arlington", "address": "4001 Rana Dr, Arlington, TX 76013", "zip": "76013", "price": 1900.0, "beds": 3.0, "baths": 2.0, "sqft": 1418.0, "dom": 1}, {"city": "Arlington", "address": "207 Hosack St, Apt A, Arlington, TX 76010", "zip": "76010", "price": 1100.0, "beds": 2.0, "baths": 1.0, "sqft": 784.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 613, Grand Prairie, TX 75052", "zip": "75052", "price": 1825.0, "beds": 1.0, "baths": 1.0, "sqft": 637.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 528, Grand Prairie, TX 75052", "zip": "75052", "price": 2760.0, "beds": 3.0, "baths": 2.0, "sqft": 1236.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 403, Grand Prairie, TX 75052", "zip": "75052", "price": 2375.0, "beds": 2.0, "baths": 2.0, "sqft": 960.0, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 506, Grand Prairie, TX 75052", "zip": "75052", "price": 2281.0, "beds": 2.0, "baths": 2.0, "sqft": 960.0, "dom": 1}, {"city": "Arlington", "address": "6426 Blue Trl, Arlington, TX 76001", "zip": "76001", "price": 2349.0, "beds": 3.0, "baths": 2.5, "sqft": 1660.0, "dom": 1}, {"city": "Grand Prairie", "address": "330 E Coral Way, Grand Prairie, TX 75051", "zip": "75051", "price": 1610.0, "beds": 3.0, "baths": 2.0, "sqft": 1448.0, "dom": 2}, {"city": "Grand Prairie", "address": "2334 Dartmouth Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2200.0, "beds": 3.0, "baths": 2.0, "sqft": 1455.0, "dom": 2}, {"city": "Grand Prairie", "address": "843 Ridgecrest Rd, Grand Prairie, TX 75052", "zip": "75052", "price": 2940.0, "beds": 4.0, "baths": 2.0, "sqft": 2202.0, "dom": 2}, {"city": "Duncanville", "address": "1030 Stanwyck Ave, Duncanville, TX 75137", "zip": "75137", "price": 2400.0, "beds": 4.0, "baths": 2.5, "sqft": 2130.0, "dom": 3}, {"city": "Grand Prairie", "address": "1106 E Strong Pkwy, Grand Prairie, TX 75050", "zip": "75050", "price": 2400.0, "beds": 4.0, "baths": 2.0, "sqft": 1544.0, "dom": 3}, {"city": "Grand Prairie", "address": "2221 Varsity Dr, Grand Prairie, TX 75051", "zip": "75051", "price": 2400.0, "beds": 4.0, "baths": 2.0, "sqft": 1800.0, "dom": 3}, {"city": "Grand Prairie", "address": "523 Cooper St, Grand Prairie, TX 75052", "zip": "75052", "price": 3000.0, "beds": 3.0, "baths": 2.5, "sqft": 2221.0, "dom": 4}, {"city": "Grand Prairie", "address": "532 Cooper St, Grand Prairie, TX 75052", "zip": "75052", "price": 3000.0, "beds": 3.0, "baths": 2.5, "sqft": 2323.0, "dom": 4}, {"city": "Duncanville", "address": "631 E Cherry St, Duncanville, TX 75116", "zip": "75116", "price": 2250.0, "beds": 3.0, "baths": 2.0, "sqft": 1812.0, "dom": 4}, {"city": "Grand Prairie", "address": "1139 Baja Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 2500.0, "beds": 4.0, "baths": 2.0, "sqft": 1880.0, "dom": 6}, {"city": "Grand Prairie", "address": "427 Ne 38th St, Grand Prairie, TX 75050", "zip": "75050", "price": 1650.0, "beds": 2.0, "baths": 1.0, "sqft": 685.0, "dom": 7}, {"city": "Grand Prairie", "address": "1110 Cielo Vista Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 1700.0, "beds": 3.0, "baths": 2.0, "sqft": 1348.0, "dom": 7}, {"city": "Duncanville", "address": "1034 Gaynor Ave, Duncanville, TX 75137", "zip": "75137", "price": 2000.0, "beds": 3.0, "baths": 2.0, "sqft": 1410.0, "dom": 1139}, {"city": "Grand Prairie", "address": "313 Melorine Dr, Grand Prairie, TX 75051", "zip": "75051", "price": 9750.0, "beds": 5.0, "baths": 3.5, "sqft": 3398.0, "dom": 1101}, {"city": "Grand Prairie", "address": "2136 Dayton Ln, Grand Prairie, TX 75052", "zip": "75052", "price": 7900.0, "beds": 4.0, "baths": 2.5, "sqft": 2313.0, "dom": 997}, {"city": "Grand Prairie", "address": "849 Timberdale St, Grand Prairie, TX 75052", "zip": "75052", "price": 2200.0, "beds": 3.0, "baths": 2.0, "sqft": 2100.0, "dom": 911}, {"city": "Grand Prairie", "address": "2047 El Paso St, Grand Prairie, TX 75051", "zip": "75051", "price": 7000.0, "beds": 3.0, "baths": 2.0, "sqft": 1087.0, "dom": 884}, {"city": "Duncanville", "address": "626 Wren Ave, Duncanville, TX 75116", "zip": "75116", "price": 1850.0, "beds": 3.0, "baths": 1.5, "sqft": 1031.0, "dom": 823}, {"city": "Duncanville", "address": "1007 Lamar Ave, Duncanville, TX 75137", "zip": "75137", "price": 2450.0, "beds": 3.0, "baths": 2.5, "sqft": 2106.0, "dom": 488}, {"city": "Grand Prairie", "address": "1059 Condor Dr, Grand Prairie, TX 75051", "zip": "75051", "price": 2000.0, "beds": 3.0, "baths": 2.5, "sqft": 1740.0, "dom": 353}, {"city": "Duncanville", "address": "335 Royal Ave, Duncanville, TX 75137", "zip": "75137", "price": 2400.0, "beds": 3.0, "baths": 1.5, "sqft": 1250.0, "dom": 333}, {"city": "Grand Prairie", "address": "1902 Se 4th St, Grand Prairie, TX 75051", "zip": "75051", "price": 800.0, "beds": 1.0, "baths": 1.0, "sqft": null, "dom": 284}, {"city": "Grand Prairie", "address": "2920 Pinehurst, Grand Prairie, TX 75104", "zip": "75104", "price": 3000.0, "beds": 4.0, "baths": 3.5, "sqft": 3269.0, "dom": 284}, {"city": "Grand Prairie", "address": "3410 Country Club Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 8150.0, "beds": 5.0, "baths": 2.5, "sqft": 2032.0, "dom": 219}, {"city": "Duncanville", "address": "223 Linda Ln, Duncanville, TX 75137", "zip": "75137", "price": 2665.0, "beds": 4.0, "baths": 2.0, "sqft": 1932.0, "dom": 7}, {"city": "Duncanville", "address": "723 Sun Valley Dr, Duncanville, TX 75116", "zip": "75116", "price": 2300.0, "beds": 3.0, "baths": 1.0, "sqft": 1002.0, "dom": 8}, {"city": "Duncanville", "address": "902 Wayne Ave, Duncanville, TX 75137", "zip": "75137", "price": 2100.0, "beds": 3.0, "baths": 2.0, "sqft": 1544.0, "dom": 9}, {"city": "Arlington", "address": "6424 Blue Trl, Arlington, TX 76001", "zip": "76001", "price": 2299.0, "beds": 3.0, "baths": 2.5, "sqft": 1660.0, "dom": 1}, {"city": "Duncanville", "address": "1019 Cedar Run Dr, Duncanville, TX 75137", "zip": "75137", "price": 1850.0, "beds": 3.0, "baths": 2.0, "sqft": 1469.0, "dom": 191}, {"city": "Grand Prairie", "address": "906 Sharpshire St, Grand Prairie, TX 75050", "zip": "75050", "price": 2025.0, "beds": 3.0, "baths": 1.0, "sqft": 2526.0, "dom": 13}, {"city": "Grand Prairie", "address": "2001 San Antonio St, Grand Prairie, TX 75051", "zip": "75051", "price": 1895.0, "beds": 3.0, "baths": 2.0, "sqft": 1311.0, "dom": 14}, {"city": "Duncanville", "address": "530 Alameda Ave, Duncanville, TX 75137", "zip": "75137", "price": 2345.0, "beds": 4.0, "baths": 2.5, "sqft": 1762.0, "dom": 152}, {"city": "Grand Prairie", "address": "726 Cranbrook Ln, Grand Prairie, TX 75052", "zip": "75052", "price": 1850.0, "beds": 4.0, "baths": 2.0, "sqft": 2114.0, "dom": 14}, {"city": "Grand Prairie", "address": "4551 Durrand Dr, Grand Prairie, TX 75052", "zip": "75052", "price": 3600.0, "beds": 5.0, "baths": 3.5, "sqft": 3894.0, "dom": 15}, {"city": "Grand Prairie", "address": "418 Newberry St, Grand Prairie, TX 75052", "zip": "75052", "price": 2500.0, "beds": 4.0, "baths": 2.5, "sqft": 1738.0, "dom": 17}, {"city": "Grand Prairie", "address": "2035 Matagorda Ln, Grand Prairie, TX 75052", "zip": "75052", "price": 2450.0, "beds": 3.0, "baths": 2.0, "sqft": 1983.0, "dom": 17}]}, {"region": "Charlotte", "date": "2026-09-17", "listings": [{"city": "Charlotte", "address": "9303 Winston Hall Ct, Charlotte, NC 28277", "zip": "28277", "price": 2460.0, "beds": 4.0, "baths": 2.0, "sqft": 1885.0, "dom": 1}, {"city": "Charlotte", "address": "11208 Maplehurst Dr, Charlotte, NC 28277", "zip": "28277", "price": 2900.0, "beds": 4.0, "baths": 2.5, "sqft": 2615.0, "dom": 1}, {"city": "Charlotte", "address": "10730 Coachman Cir, Charlotte, NC 28277", "zip": "28277", "price": 2550.0, "beds": 3.0, "baths": 2.5, "sqft": 1957.0, "dom": 1}, {"city": "Charlotte", "address": "15317 Marvin Rd, Charlotte, NC 28277", "zip": "28277", "price": 4100.0, "beds": 4.0, "baths": 3.0, "sqft": 3100.0, "dom": 1}, {"city": "Charlotte", "address": "16013 Caranna Ct, Charlotte, NC 28277", "zip": "28277", "price": 2999.0, "beds": 5.0, "baths": 4.5, "sqft": 3195.0, "dom": 1}, {"city": "Charlotte", "address": "6926 Wolf Run Dr, Charlotte, NC 28277", "zip": "28277", "price": 3335.0, "beds": 5.0, "baths": 2.5, "sqft": 3639.0, "dom": 1}, {"city": "Charlotte", "address": "4318 Woods End Ln, Charlotte, NC 28277", "zip": "28277", "price": 2700.0, "beds": 4.0, "baths": 2.0, "sqft": 2100.0, "dom": 1}, {"city": "Charlotte", "address": "11520 Destin Ln, Charlotte, NC 28277", "zip": "28277", "price": 2099.0, "beds": 2.0, "baths": 4.0, "sqft": 1889.0, "dom": 1}, {"city": "Charlotte", "address": "7023 Blakeney Greens Blvd, Charlotte, NC 28277", "zip": "28277", "price": 3100.0, "beds": 3.0, "baths": 2.5, "sqft": 1812.0, "dom": 2}, {"city": "Charlotte", "address": "6611 Flat Creek Dr, Charlotte, NC 28277", "zip": "28277", "price": 2495.0, "beds": 3.0, "baths": 2.5, "sqft": 1787.0, "dom": 2}, {"city": "Charlotte", "address": "6803 Flat Creek Dr, Charlotte, NC 28277", "zip": "28277", "price": 2400.0, "beds": 3.0, "baths": 2.5, "sqft": 2164.0, "dom": 3}, {"city": "Charlotte", "address": "16840 Kettlewell Ln, Charlotte, NC 28277", "zip": "28277", "price": 2880.0, "beds": 3.0, "baths": 2.5, "sqft": 1550.0, "dom": 5}, {"city": "Charlotte", "address": "11005 Stonepath Ln, Charlotte, NC 28277", "zip": "28277", "price": 3500.0, "beds": 4.0, "baths": 2.5, "sqft": 2745.0, "dom": 6}, {"city": "Charlotte", "address": "8710 Houston Ridge Rd, Charlotte, NC 28277", "zip": "28277", "price": 2600.0, "beds": 3.0, "baths": 2.5, "sqft": 1922.0, "dom": 7}, {"city": "Charlotte", "address": "12315 Chesley Dr, Charlotte, NC 28277", "zip": "28277", "price": 3100.0, "beds": 4.0, "baths": 3.5, "sqft": 2690.0, "dom": 8}, {"city": "Charlotte", "address": "9416 Graywell Ln, Charlotte, NC 28277", "zip": "28277", "price": 2195.0, "beds": 3.0, "baths": 2.5, "sqft": 1612.0, "dom": 9}, {"city": "Charlotte", "address": "6712 Coral Rose Rd, Charlotte, NC 28277", "zip": "28277", "price": 3200.0, "beds": 5.0, "baths": 3.0, "sqft": 2864.0, "dom": 9}, {"city": "Charlotte", "address": "10420 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "price": 2798.0, "beds": 3.0, "baths": 2.5, "sqft": 2028.0, "dom": 10}, {"city": "Charlotte", "address": "10724 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "price": 2595.0, "beds": 3.0, "baths": 2.5, "sqft": 2285.0, "dom": 13}, {"city": "Charlotte", "address": "11731 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "price": 2795.0, "beds": 3.0, "baths": 2.5, "sqft": 2012.0, "dom": 13}, {"city": "Charlotte", "address": "6105 Old Corral St, Charlotte, NC 28277", "zip": "28277", "price": 3150.0, "beds": 4.0, "baths": 2.5, "sqft": 1965.0, "dom": 14}, {"city": "Charlotte", "address": "10423 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "price": 2900.0, "beds": 3.0, "baths": 2.5, "sqft": 2064.0, "dom": 1292}, {"city": "Charlotte", "address": "11604 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "price": 2350.0, "beds": 3.0, "baths": 2.5, "sqft": 1823.0, "dom": 1204}, {"city": "Charlotte", "address": "11644 James Richard Dr, Charlotte, NC 28277", "zip": "28277", "price": 4835.0, "beds": 4.0, "baths": 4.5, "sqft": 4575.0, "dom": 128}, {"city": "Charlotte", "address": "17430 Westmill Ln, Charlotte, NC 28277", "zip": "28277", "price": 950.0, "beds": 1.0, "baths": 1.0, "sqft": 150.0, "dom": 126}, {"city": "Charlotte", "address": "11701 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "price": 2015.0, "beds": 3.0, "baths": 2.0, "sqft": 1624.0, "dom": 117}, {"city": "Charlotte", "address": "11735 Hawick Valley Ln, Charlotte, NC 28277", "zip": "28277", "price": 2575.0, "beds": 4.0, "baths": 2.5, "sqft": 2199.0, "dom": 118}, {"city": "Charlotte", "address": "11413 Blue Blossom Rd, Charlotte, NC 28277", "zip": "28277", "price": 3350.0, "beds": 5.0, "baths": 4.0, "sqft": 2843.0, "dom": 16}, {"city": "Charlotte", "address": "8915 Gamesford Dr, Charlotte, NC 28277", "zip": "28277", "price": 2400.0, "beds": 3.0, "baths": 2.5, "sqft": 1793.0, "dom": 21}, {"city": "Charlotte", "address": "4811 Old Course Dr, Charlotte, NC 28277", "zip": "28277", "price": 6900.0, "beds": 5.0, "baths": 3.5, "sqft": 5194.0, "dom": 23}, {"city": "Charlotte", "address": "11228 Dickie Ross Rd, Charlotte, NC 28277", "zip": "28277", "price": 2330.0, "beds": 3.0, "baths": 2.0, "sqft": 1354.0, "dom": 28}, {"city": "Charlotte", "address": "10496 Gunnison Ln, Charlotte, NC 28277", "zip": "28277", "price": 3500.0, "beds": 4.0, "baths": 2.5, "sqft": 3252.0, "dom": 107}, {"city": "Charlotte", "address": "15640 Sullivan Ridge Dr, Charlotte, NC 28277", "zip": "28277", "price": 2675.0, "beds": 3.0, "baths": 2.0, "sqft": 2002.0, "dom": 105}, {"city": "Charlotte", "address": "10938 Sedgemoor Ln, Charlotte, NC 28277", "zip": "28277", "price": 2700.0, "beds": 5.0, "baths": 2.5, "sqft": 2696.0, "dom": 86}, {"city": "Charlotte", "address": "7307 Roseland Ave, Charlotte, NC 28277", "zip": "28277", "price": 7450.0, "beds": 5.0, "baths": 5.0, "sqft": 4011.0, "dom": 86}, {"city": "Charlotte", "address": "17450 Baldwin Hall Dr, Charlotte, NC 28277", "zip": "28277", "price": 2800.0, "beds": 4.0, "baths": 2.5, "sqft": 2320.0, "dom": 32}, {"city": "Charlotte", "address": "14810 Provence Ln, Charlotte, NC 28277", "zip": "28277", "price": 3500.0, "beds": 6.0, "baths": 4.0, "sqft": 3000.0, "dom": 41}, {"city": "Charlotte", "address": "8123 Cornhill Ave, Charlotte, NC 28277", "zip": "28277", "price": 3395.0, "beds": 5.0, "baths": 3.0, "sqft": 2622.0, "dom": 78}, {"city": "Charlotte", "address": "5100 Piper Glen Dr, Charlotte, NC 28277", "zip": "28277", "price": 9250.0, "beds": 5.0, "baths": 7.5, "sqft": 7286.0, "dom": 75}, {"city": "Charlotte", "address": "10620 Fairway Ridge Rd, Charlotte, NC 28277", "zip": "28277", "price": 2595.0, "beds": 4.0, "baths": 2.5, "sqft": 1922.0, "dom": 74}, {"city": "Charlotte", "address": "10822 Chamberlain Hall Ct, Charlotte, NC 28277", "zip": "28277", "price": 4500.0, "beds": 6.0, "baths": 3.5, "sqft": 4764.0, "dom": 68}, {"city": "Charlotte", "address": "10000 Ridgemore Dr, Charlotte, NC 28277", "zip": "28277", "price": 2700.0, "beds": 4.0, "baths": 2.5, "sqft": 2410.0, "dom": 68}, {"city": "Charlotte", "address": "15118 Edindale Dr, Charlotte, NC 28277", "zip": "28277", "price": 2330.0, "beds": 3.0, "baths": 2.5, "sqft": 1974.0, "dom": 67}, {"city": "Charlotte", "address": "12218 Honor Guard Ave, Charlotte, NC 28277", "zip": "28277", "price": 2450.0, "beds": 3.0, "baths": 2.5, "sqft": 2014.0, "dom": 58}, {"city": "Charlotte", "address": "9606 Fairway Ridge Rd, Charlotte, NC 28277", "zip": "28277", "price": 2950.0, "beds": 3.0, "baths": 2.5, "sqft": 2119.0, "dom": 57}, {"city": "Charlotte", "address": "6739 Red Maple Dr, Charlotte, NC 28277", "zip": "28277", "price": 2950.0, "beds": 4.0, "baths": 2.5, "sqft": 2846.0, "dom": 58}, {"city": "Charlotte", "address": "15569 Stronvar House Ln, Charlotte, NC 28277", "zip": "28277", "price": 2950.0, "beds": 2.0, "baths": 3.0, "sqft": 1615.0, "dom": 52}, {"city": "Charlotte", "address": "16100 Sunninghill Park Rd, Charlotte, NC 28277", "zip": "28277", "price": 2795.0, "beds": 5.0, "baths": 4.0, "sqft": 2489.0, "dom": 1}, {"city": "Charlotte", "address": "12429 Dunford St, Charlotte, NC 28277", "zip": "28277", "price": 675.0, "beds": 1.0, "baths": 1.0, "sqft": 1800.0, "dom": 1}, {"city": "Charlotte", "address": "10318 Mcgoogan Ln, Charlotte, NC 28277", "zip": "28277", "price": 700.0, "beds": 1.0, "baths": 1.0, "sqft": 1412.0, "dom": 1}, {"city": "Charlotte", "address": "6210 Creek Bend Dr, Charlotte, NC 28277", "zip": "28277", "price": 2399.0, "beds": 3.0, "baths": 2.5, "sqft": 2230.0, "dom": 1}, {"city": "Charlotte", "address": "14910 Scothurst Ln, Charlotte, NC 28277", "zip": "28277", "price": 1935.0, "beds": 3.0, "baths": 2.5, "sqft": 1302.0, "dom": 1}, {"city": "Charlotte", "address": "11634 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "price": 2135.0, "beds": 3.0, "baths": 2.0, "sqft": 1509.0, "dom": 1}, {"city": "Charlotte", "address": "8903 Darcy Hopkins Dr, Charlotte, NC 28277", "zip": "28277", "price": 2699.0, "beds": 3.0, "baths": 2.5, "sqft": 2390.0, "dom": 1}, {"city": "Charlotte", "address": "6223 Rosebriar Ln, Charlotte, NC 28277", "zip": "28277", "price": 2335.0, "beds": 3.0, "baths": 2.0, "sqft": 1374.0, "dom": 61}]}, {"region": "DFW", "date": "2026-09-18", "listings": [{"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 712, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.687977, "lon": -97.045685, "price": 2235, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Arlington", "address": "2024 Park Springs Blvd, Arlington, TX 76013", "zip": "76013", "lat": 32.712662, "lon": -97.169609, "price": 1084, "beds": 1, "baths": 1, "sqft": 718, "dom": 1}, {"city": "Arlington", "address": "5509 Royal Meadow Ln, Arlington, TX 76017", "zip": "76017", "lat": 32.656949, "lon": -97.126598, "price": 2410, "beds": 5, "baths": 3, "sqft": 1796, "dom": 1}, {"city": "Grand Prairie", "address": "4349 Presto Cir, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.665718, "lon": -97.055995, "price": 2270, "beds": 3, "baths": 2, "sqft": 1647, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 912, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.686886, "lon": -97.044601, "price": 2187, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Arlington", "address": "2505 Mesa Glen Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.642229, "lon": -97.148131, "price": 4150, "beds": 5, "baths": 3.5, "sqft": 4513, "dom": 1}, {"city": "Arlington", "address": "4209 Wingrove Dr, Arlington, TX 76015", "zip": "76015", "lat": 32.677156, "lon": -97.142938, "price": 1750, "beds": 2, "baths": 2, "sqft": 1192, "dom": 1}, {"city": "Arlington", "address": "6720 Tabor Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.635874, "lon": -97.107249, "price": 2350, "beds": 3, "baths": 2, "sqft": 2180, "dom": 1}, {"city": "Arlington", "address": "2414 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "lat": 32.662475, "lon": -97.147459, "price": 1799, "beds": 3, "baths": 2, "sqft": 1076, "dom": 1}, {"city": "Arlington", "address": "8000 Stowe Springs Ln, Arlington, TX 76002", "zip": "76002", "lat": 32.607932, "lon": -97.09123, "price": 3249, "beds": 5, "baths": 4, "sqft": 4184, "dom": 1}, {"city": "Arlington", "address": "2305 Lavon Creek Ln, Arlington, TX 76006", "zip": "76006", "lat": 32.773675, "lon": -97.077686, "price": 2675, "beds": 4, "baths": 2, "sqft": 1850, "dom": 1}, {"city": "Grand Prairie", "address": "2841 Garden Grove Rd, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.651797, "lon": -97.053655, "price": 2645, "beds": 3, "baths": 2, "sqft": 2328, "dom": 1}, {"city": "Arlington", "address": "6422 Blue Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.644516, "lon": -97.117864, "price": 2499, "beds": 4, "baths": 2.5, "sqft": 1721, "dom": 1}, {"city": "Arlington", "address": "109 Kevin Ln, Arlington, TX 76014", "zip": "76014", "lat": 32.706065, "lon": -97.109778, "price": 1550, "beds": 3, "baths": 1.5, "sqft": 1375, "dom": 1}, {"city": "Grand Prairie", "address": "4634 Lincolnshire Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.661491, "lon": -97.055287, "price": 2720, "beds": 4, "baths": 2.5, "sqft": 2660, "dom": 1}, {"city": "Arlington", "address": "6427 Blue Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.64413, "lon": -97.117691, "price": 2349, "beds": 3, "baths": 2.5, "sqft": 1660, "dom": 1}, {"city": "Arlington", "address": "6442 Blue Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.644134, "lon": -97.117181, "price": 2349, "beds": 3, "baths": 2.5, "sqft": 1660, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 204, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.685574, "lon": -97.045235, "price": 1587, "beds": 1, "baths": 1, "sqft": 637, "dom": 1}, {"city": "Grand Prairie", "address": "2860 Ironwood Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.669406, "lon": -97.054909, "price": 2745, "beds": 5, "baths": 2.5, "sqft": 2433, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 916, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.687145, "lon": -97.044777, "price": 2413, "beds": 3, "baths": 2, "sqft": 1236, "dom": 1}, {"city": "Arlington", "address": "1209 Avondale Ct, # C, Arlington, TX 76011", "zip": "76011", "lat": 32.752483, "lon": -97.103249, "price": 1200, "beds": 2, "baths": 1, "sqft": 775, "dom": 1}, {"city": "Arlington", "address": "758 Bonnet Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.643003, "lon": -97.117675, "price": 2349, "beds": 3, "baths": 2.5, "sqft": 1660, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 728, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.687954, "lon": -97.044617, "price": 2118, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Arlington", "address": "511 Nightshade Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.658567, "lon": -97.105505, "price": 1950, "beds": 3, "baths": 2, "sqft": 1208, "dom": 1}, {"city": "Grand Prairie", "address": "133 Baron Pl, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.71584, "lon": -97.004703, "price": 1925, "beds": 3, "baths": 1.5, "sqft": 1153, "dom": 2}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 408, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.685555, "lon": -97.045525, "price": 2375, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Duncanville", "address": "742 Ridge Crest Dr, Duncanville, TX 75116", "zip": "75116", "lat": 32.651176, "lon": -96.894173, "price": 2250, "beds": 3, "baths": 2, "sqft": 1976, "dom": 2}, {"city": "Grand Prairie", "address": "330 E Coral Way, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.717538, "lon": -96.997122, "price": 1610, "beds": 3, "baths": 2, "sqft": 1448, "dom": 3}, {"city": "Grand Prairie", "address": "2334 Dartmouth Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.666723, "lon": -97.034812, "price": 2200, "beds": 3, "baths": 2, "sqft": 1455, "dom": 3}, {"city": "Duncanville", "address": "1030 Stanwyck Ave, Duncanville, TX 75137", "zip": "75137", "lat": 32.640744, "lon": -96.885505, "price": 2400, "beds": 4, "baths": 2.5, "sqft": 2130, "dom": 4}, {"city": "Grand Prairie", "address": "843 Ridgecrest Rd, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.667304, "lon": -97.017587, "price": 2940, "beds": 4, "baths": 2, "sqft": 2202, "dom": 3}, {"city": "Grand Prairie", "address": "1106 E Strong Pkwy, Grand Prairie, TX 75050", "zip": "75050", "lat": 32.750596, "lon": -97.019708, "price": 2400, "beds": 4, "baths": 2, "sqft": 1544, "dom": 4}, {"city": "Grand Prairie", "address": "2221 Varsity Dr, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.713145, "lon": -96.989528, "price": 2400, "beds": 4, "baths": 2, "sqft": 1800, "dom": 4}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 613, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.68689, "lon": -97.045563, "price": 1825, "beds": 1, "baths": 1, "sqft": 637, "dom": 1}, {"city": "Arlington", "address": "2223 Westyork Dr, # 2223, Arlington, TX 76015", "zip": "76015", "lat": 32.702433, "lon": -97.143784, "price": 1495, "beds": 2, "baths": 2, "sqft": null, "dom": 1}, {"city": "Duncanville", "address": "631 E Cherry St, Duncanville, TX 75116", "zip": "75116", "lat": 32.653585, "lon": -96.896529, "price": 2250, "beds": 3, "baths": 2, "sqft": 1812, "dom": 5}, {"city": "Grand Prairie", "address": "532 Cooper St, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.668516, "lon": -97.000536, "price": 3000, "beds": 3, "baths": 2.5, "sqft": 2323, "dom": 5}, {"city": "Grand Prairie", "address": "1139 Baja Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.706099, "lon": -96.988756, "price": 2500, "beds": 4, "baths": 2, "sqft": 1880, "dom": 7}, {"city": "Arlington", "address": "7027 Glenshire Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.629801, "lon": -97.111276, "price": 2490, "beds": 4, "baths": 2, "sqft": 2081, "dom": 1}, {"city": "Arlington", "address": "4200 Cranbrook Dr, Arlington, TX 76016", "zip": "76016", "lat": 32.677353, "lon": -97.210739, "price": 2355, "beds": 5, "baths": 2, "sqft": 1782, "dom": 1}, {"city": "Arlington", "address": "7307 Fossil Creek Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.622799, "lon": -97.105982, "price": 2485, "beds": 3, "baths": 2, "sqft": 1806, "dom": 1}, {"city": "Arlington", "address": "4217 Glen Hollow Cir, Arlington, TX 76016", "zip": "76016", "lat": 32.676153, "lon": -97.154553, "price": 2200, "beds": 3, "baths": 2.5, "sqft": 1580, "dom": 1}, {"city": "Arlington", "address": "6309 Brookmont Ct, Arlington, TX 76018", "zip": "76018", "lat": 32.643862, "lon": -97.09018, "price": 2280, "beds": 3, "baths": 2.5, "sqft": 1725, "dom": 1}, {"city": "Arlington", "address": "917 Salida Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.615577, "lon": -97.12666, "price": 2575, "beds": 4, "baths": 2.5, "sqft": 2816, "dom": 1}, {"city": "Arlington", "address": "930 Danforth Pl, Arlington, TX 76017", "zip": "76017", "lat": 32.649408, "lon": -97.122876, "price": 2480, "beds": 4, "baths": 2.5, "sqft": 2159, "dom": 1}, {"city": "Arlington", "address": "1201 Mule Deer Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.613775, "lon": -97.088528, "price": 2685, "beds": 4, "baths": 2.5, "sqft": 2208, "dom": 1}, {"city": "Arlington", "address": "7905 Raton Ridge Ln, Arlington, TX 76002", "zip": "76002", "lat": 32.616993, "lon": -97.105404, "price": 2300, "beds": 3, "baths": 2, "sqft": 1741, "dom": 1}, {"city": "Arlington", "address": "3037 San Martin Dr, Arlington, TX 76010", "zip": "76010", "lat": 32.722532, "lon": -97.054742, "price": 2120, "beds": 3, "baths": 2, "sqft": 1373, "dom": 1}, {"city": "Arlington", "address": "2308 Villanova St, Arlington, TX 76018", "zip": "76018", "lat": 32.653784, "lon": -97.067676, "price": 2700, "beds": 3, "baths": 2.5, "sqft": 2070, "dom": 1}, {"city": "Arlington", "address": "2321 Clareton Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.663221, "lon": -97.068174, "price": 2220, "beds": 3, "baths": 2, "sqft": 1444, "dom": 1}, {"city": "Grand Prairie", "address": "1110 Cielo Vista Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.704084, "lon": -96.990108, "price": 1700, "beds": 3, "baths": 2, "sqft": 1348, "dom": 8}, {"city": "Duncanville", "address": "223 Linda Ln, Duncanville, TX 75137", "zip": "75137", "lat": 32.632048, "lon": -96.911332, "price": 2665, "beds": 4, "baths": 2, "sqft": 1932, "dom": 8}, {"city": "Duncanville", "address": "723 Sun Valley Dr, Duncanville, TX 75116", "zip": "75116", "lat": 32.668373, "lon": -96.892986, "price": 2300, "beds": 3, "baths": 1, "sqft": 1002, "dom": 9}, {"city": "Arlington", "address": "1108 E Inwood Dr, Arlington, TX 76010", "zip": "76010", "lat": 32.714373, "lon": -97.093009, "price": 1595, "beds": 3, "baths": 1, "sqft": 906, "dom": 1}, {"city": "Duncanville", "address": "902 Wayne Ave, Duncanville, TX 75137", "zip": "75137", "lat": 32.637213, "lon": -96.889853, "price": 2100, "beds": 3, "baths": 2, "sqft": 1544, "dom": 10}, {"city": "Grand Prairie", "address": "906 Sharpshire St, Grand Prairie, TX 75050", "zip": "75050", "lat": 32.7656, "lon": -97.017881, "price": 2025, "beds": 3, "baths": 1, "sqft": 2526, "dom": 14}, {"city": "Grand Prairie", "address": "726 Cranbrook Ln, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.706845, "lon": -97.014932, "price": 1850, "beds": 4, "baths": 2, "sqft": 2114, "dom": 15}, {"city": "Grand Prairie", "address": "2001 San Antonio St, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.737781, "lon": -97.031042, "price": 1895, "beds": 3, "baths": 2, "sqft": 1311, "dom": 15}, {"city": "Grand Prairie", "address": "4551 Durrand Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.659678, "lon": -97.00534, "price": 3600, "beds": 5, "baths": 3.5, "sqft": 3894, "dom": 16}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 506, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.684956, "lon": -97.046318, "price": 2281, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Arlington", "address": "807 Raleigh Cir, Arlington, TX 76010", "zip": "76010", "lat": 32.72514, "lon": -97.076384, "price": 1600, "beds": 3, "baths": 1, "sqft": 865, "dom": 1}, {"city": "Arlington", "address": "8011 Mosstree Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.61569, "lon": -97.120555, "price": 2100, "beds": 3, "baths": 2, "sqft": 1526, "dom": 1}, {"city": "Arlington", "address": "816 Castleview Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.636428, "lon": -97.117421, "price": 1895, "beds": 3, "baths": 2, "sqft": 1182, "dom": 1}, {"city": "Grand Prairie", "address": "2327 Wise Rd, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.643163, "lon": -97.041544, "price": 2599, "beds": 4, "baths": 2, "sqft": 2581, "dom": 1}, {"city": "Arlington", "address": "1007 Southmoor Dr, Unit Eom, Arlington, TX 76010", "zip": "76010", "lat": 32.709805, "lon": -97.095879, "price": 1200, "beds": 2, "baths": 2, "sqft": 1074, "dom": 1}, {"city": "Grand Prairie", "address": "2626 Bennington Ct, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.669535, "lon": -97.046405, "price": 2150, "beds": 3, "baths": 2, "sqft": 1430, "dom": 1}, {"city": "Arlington", "address": "6004 Meadowside Trl, Arlington, TX 76017", "zip": "76017", "lat": 32.647738, "lon": -97.12057, "price": 1900, "beds": 3, "baths": 2, "sqft": 1578, "dom": 1}, {"city": "Arlington", "address": "1414 Lackland St, Arlington, TX 76010", "zip": "76010", "lat": 32.722, "lon": -97.090804, "price": 1795, "beds": 3, "baths": 1, "sqft": 1252, "dom": 1}, {"city": "Arlington", "address": "618 Ragwood Rd, Arlington, TX 76002", "zip": "76002", "lat": 32.603177, "lon": -97.089495, "price": 2130, "beds": 3, "baths": 2, "sqft": 1860, "dom": 1}, {"city": "Arlington", "address": "6728 Snapdragon Ln, Arlington, TX 76002", "zip": "76002", "lat": 32.634035, "lon": -97.099783, "price": 2490, "beds": 4, "baths": 2, "sqft": 1955, "dom": 1}, {"city": "Grand Prairie", "address": "2809 Garden Oaks Pl, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.648701, "lon": -97.05195, "price": 2700, "beds": 4, "baths": 2.5, "sqft": 2452, "dom": 1}, {"city": "Arlington", "address": "2117 Cold Springs Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.656156, "lon": -97.141394, "price": 2495, "beds": 3, "baths": 2.5, "sqft": 2122, "dom": 1}, {"city": "Arlington", "address": "337 Fort Edward Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.61161, "lon": -97.111201, "price": 2655, "beds": 3, "baths": 2, "sqft": 2155, "dom": 1}, {"city": "Arlington", "address": "6120 Pinwood Cir, Arlington, TX 76001", "zip": "76001", "lat": 32.646264, "lon": -97.141212, "price": 3215, "beds": 4, "baths": 3.5, "sqft": 2992, "dom": 1}, {"city": "Arlington", "address": "8139 Mossberg Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.613336, "lon": -97.095207, "price": 2965, "beds": 3, "baths": 2, "sqft": 2657, "dom": 1}, {"city": "Arlington", "address": "110 Cimarron Ln, Arlington, TX 76014", "zip": "76014", "lat": 32.68644, "lon": -97.104405, "price": 3199, "beds": 5, "baths": 3, "sqft": 1556, "dom": 1}, {"city": "Arlington", "address": "722 Gillon Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.620536, "lon": -97.117507, "price": 2700, "beds": 4, "baths": 2.5, "sqft": 2851, "dom": 1}, {"city": "Arlington", "address": "1214 Hardisty Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.642048, "lon": -97.132845, "price": 2290, "beds": 3, "baths": 2, "sqft": 1813, "dom": 1}, {"city": "Arlington", "address": "5629 Wembley Downs Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.653056, "lon": -97.143582, "price": 2440, "beds": 4, "baths": 2.5, "sqft": 1844, "dom": 1}, {"city": "Arlington", "address": "902 Pryor Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.626052, "lon": -97.122347, "price": 2070, "beds": 3, "baths": 2, "sqft": 1430, "dom": 1}, {"city": "Arlington", "address": "6619 Tabor Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.637065, "lon": -97.10461, "price": 2975, "beds": 4, "baths": 2.5, "sqft": 2690, "dom": 1}, {"city": "Grand Prairie", "address": "2414 Claremont Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.666439, "lon": -97.037537, "price": 2380, "beds": 4, "baths": 2.5, "sqft": 1932, "dom": 1}, {"city": "Arlington", "address": "2703 Blackwood Dr, Arlington, TX 76013", "zip": "76013", "lat": 32.727166, "lon": -97.151238, "price": 2195, "beds": 3, "baths": 2, "sqft": 1872, "dom": 1}, {"city": "Arlington", "address": "4800 Hollow Tree Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.670155, "lon": -97.08392, "price": 2180, "beds": 3, "baths": 2, "sqft": 1687, "dom": 1}, {"city": "Arlington", "address": "5807 Polo Club Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.65144, "lon": -97.144701, "price": 2295, "beds": 3, "baths": 2.5, "sqft": 2155, "dom": 1}, {"city": "Arlington", "address": "2324 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "lat": 32.662456, "lon": -97.146724, "price": 1799, "beds": 3, "baths": 2, "sqft": 1152, "dom": 1}, {"city": "Arlington", "address": "510 Gay St, Arlington, TX 76010", "zip": "76010", "lat": 32.730473, "lon": -97.089251, "price": 2699, "beds": 5, "baths": 2, "sqft": 1121, "dom": 1}, {"city": "Arlington", "address": "7928 Raton Ridge Ln, Arlington, TX 76002", "zip": "76002", "lat": 32.615287, "lon": -97.104758, "price": 2750, "beds": 4, "baths": 2.5, "sqft": 2535, "dom": 1}, {"city": "Grand Prairie", "address": "2952 Volturno Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.626183, "lon": -97.06449, "price": 2610, "beds": 3, "baths": 3, "sqft": 2318, "dom": 1}, {"city": "Arlington", "address": "5205 Hideaway Ct, Arlington, TX 76017", "zip": "76017", "lat": 32.661391, "lon": -97.172462, "price": 2175, "beds": 3, "baths": 2, "sqft": 1590, "dom": 1}, {"city": "Arlington", "address": "509 Jordan Ln, Arlington, TX 76012", "zip": "76012", "lat": 32.739679, "lon": -97.138889, "price": 1300, "beds": 2, "baths": 1, "sqft": 660, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 528, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.686287, "lon": -97.04615, "price": 2760, "beds": 3, "baths": 2, "sqft": 1236, "dom": 1}, {"city": "Arlington", "address": "207 Hosack St, Apt A, Arlington, TX 76010", "zip": "76010", "lat": 32.726677, "lon": -97.103996, "price": 1100, "beds": 2, "baths": 1, "sqft": 784, "dom": 1}, {"city": "Grand Prairie", "address": "418 Newberry St, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.665, "lon": -97.003398, "price": 2500, "beds": 4, "baths": 2.5, "sqft": 1738, "dom": 18}, {"city": "Arlington", "address": "6406 Blue Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.64452, "lon": -97.118394, "price": 2349, "beds": 3, "baths": 2.5, "sqft": 1660, "dom": 1}, {"city": "Arlington", "address": "767 Bonnet Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.643356, "lon": -97.118004, "price": 2499, "beds": 4, "baths": 2.5, "sqft": 1721, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 403, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.685837, "lon": -97.045525, "price": 2375, "beds": 2, "baths": 2, "sqft": 960, "dom": 1}, {"city": "Arlington", "address": "727 Bonnet Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.643824, "lon": -97.116883, "price": 2275, "beds": 2, "baths": 2.5, "sqft": 1616, "dom": 1}, {"city": "Grand Prairie", "address": "2035 Matagorda Ln, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.644144, "lon": -97.032209, "price": 2450, "beds": 3, "baths": 2, "sqft": 1983, "dom": 18}, {"city": "Duncanville", "address": "327 E Center St, Duncanville, TX 75116", "zip": "75116", "lat": 32.651998, "lon": -96.904149, "price": 2300, "beds": 3, "baths": 2, "sqft": 1408, "dom": 21}, {"city": "Duncanville", "address": "526 Pebble Rd, Duncanville, TX 75116", "zip": "75116", "lat": 32.657833, "lon": -96.918859, "price": 1850, "beds": 3, "baths": 2, "sqft": 1237, "dom": 22}, {"city": "Grand Prairie", "address": "1918 Proctor Dr, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.71818, "lon": -97.010802, "price": 2250, "beds": 4, "baths": 2, "sqft": 1690, "dom": 22}, {"city": "Duncanville", "address": "267 Merribrook Trl, Duncanville, TX 75116", "zip": "75116", "lat": 32.647238, "lon": -96.914479, "price": 1950, "beds": 3, "baths": 1.5, "sqft": 1173, "dom": 23}, {"city": "Grand Prairie", "address": "5456 Maverick Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.6407, "lon": -97.035754, "price": 3500, "beds": 4, "baths": 2.5, "sqft": 3002, "dom": 23}, {"city": "Duncanville", "address": "211 Willowwood Pl, Duncanville, TX 75116", "zip": "75116", "lat": 32.649497, "lon": -96.918333, "price": 2195, "beds": 4, "baths": 3, "sqft": 1657, "dom": 24}, {"city": "Arlington", "address": "6452 Blue Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.643829, "lon": -97.117176, "price": 2349, "beds": 3, "baths": 2.5, "sqft": 1660, "dom": 1}, {"city": "Grand Prairie", "address": "809 Burleson St, Grand Prairie, TX 75050", "zip": "75050", "lat": 32.751757, "lon": -97.014814, "price": 3495, "beds": 9, "baths": 4, "sqft": 2894, "dom": 26}, {"city": "Grand Prairie", "address": "2621 Chablis Dr, Grand Prairie, TX 75054", "zip": "75054", "lat": 32.591333, "lon": -97.035773, "price": 2350, "beds": 2, "baths": 2, "sqft": 1390, "dom": 26}, {"city": "Grand Prairie", "address": "562 Mercer St, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.666303, "lon": -96.999391, "price": 2795, "beds": 4, "baths": 2.5, "sqft": 2324, "dom": 32}, {"city": "Grand Prairie", "address": "4304 Harpers Ferry Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.66672, "lon": -97.015856, "price": 3200, "beds": 4, "baths": 2.5, "sqft": 3075, "dom": 32}, {"city": "Arlington", "address": "6212 Berlinetta Dr, Arlington, TX 76001", "zip": "76001", "lat": 32.643304, "lon": -97.123773, "price": 2199, "beds": 3, "baths": 2, "sqft": 1425, "dom": 1}, {"city": "Arlington", "address": "2322 Kingsford Ct, Arlington, TX 76017", "zip": "76017", "lat": 32.662453, "lon": -97.146602, "price": 1799, "beds": 3, "baths": 2, "sqft": 1300, "dom": 1}, {"city": "Grand Prairie", "address": "3500 S Great Pkwy SW, Apt 538, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.686825, "lon": -97.04615, "price": 2891, "beds": 3, "baths": 2, "sqft": 1236, "dom": 1}, {"city": "Grand Prairie", "address": "1646 Jackson St, Grand Prairie, TX 75051", "zip": "75051", "lat": 32.722524, "lon": -97.006533, "price": 2300, "beds": 4, "baths": 2.5, "sqft": 1776, "dom": 33}, {"city": "Grand Prairie", "address": "2114 Burrows Trl, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.651843, "lon": -97.033693, "price": 2200, "beds": 3, "baths": 2, "sqft": 1934, "dom": 36}, {"city": "Duncanville", "address": "423 Rita Ln, Duncanville, TX 75116", "zip": "75116", "lat": 32.669655, "lon": -96.914714, "price": 2300, "beds": 3, "baths": 2, "sqft": 1829, "dom": 36}, {"city": "Grand Prairie", "address": "1216 Lake Forest Dr, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.645388, "lon": -97.023196, "price": 2450, "beds": 4, "baths": 2, "sqft": 1964, "dom": 36}, {"city": "Duncanville", "address": "846 Gable Ave, Duncanville, TX 75137", "zip": "75137", "lat": 32.637807, "lon": -96.889861, "price": 2059, "beds": 3, "baths": 1.5, "sqft": 1722, "dom": 38}, {"city": "Grand Prairie", "address": "1918 Lewis Trl, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.651428, "lon": -97.031161, "price": 2300, "beds": 4, "baths": 2, "sqft": 2785, "dom": 40}, {"city": "Grand Prairie", "address": "2808 Wales Ct, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.659185, "lon": -97.051883, "price": 9750, "beds": 6, "baths": 2.5, "sqft": 2892, "dom": 1095}, {"city": "Arlington", "address": "731 Bonnet Trl, Arlington, TX 76001", "zip": "76001", "lat": 32.643673, "lon": -97.11688, "price": 2399, "beds": 3, "baths": 2.5, "sqft": 1694, "dom": 1}, {"city": "Arlington", "address": "2805 Yorkfield Ct, Unit 1, Arlington, TX 76001", "zip": "76001", "lat": 32.621037, "lon": -97.156097, "price": 2150, "beds": 3, "baths": 2, "sqft": 1703, "dom": 1375}, {"city": "Arlington", "address": "1900 Melrose St, Arlington, TX 76010", "zip": "76010", "lat": 32.729208, "lon": -97.080004, "price": 1295, "beds": 2, "baths": 1, "sqft": null, "dom": 1128}, {"city": "Arlington", "address": "4614 Branchview Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.670493, "lon": -97.181989, "price": 2475, "beds": 4, "baths": 2, "sqft": 2296, "dom": 1271}, {"city": "Arlington", "address": "312 Valley Spring Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.649317, "lon": -97.110562, "price": 2050, "beds": 3, "baths": 2, "sqft": 1367, "dom": 1318}, {"city": "Arlington", "address": "3803 Cascade Sky Dr, Arlington, TX 76005", "zip": "76005", "lat": 32.796189, "lon": -97.092925, "price": 2800, "beds": 2, "baths": 3, "sqft": 1811, "dom": 1270}, {"city": "Arlington", "address": "4820 Crest Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.667992, "lon": -97.197977, "price": 2020, "beds": 3, "baths": 2, "sqft": 1577, "dom": 1290}, {"city": "Arlington", "address": "3410 Dovecreek Dr, Arlington, TX 76016", "zip": "76016", "lat": 32.691664, "lon": -97.181801, "price": 2130, "beds": 3, "baths": 2, "sqft": 1564, "dom": 1318}, {"city": "Grand Prairie", "address": "2361 Shirecreek Cir, Grand Prairie, TX 75052", "zip": "75052", "lat": 32.69263, "lon": -97.0388, "price": 2675, "beds": 4, "baths": 2.5, "sqft": 2588, "dom": 1222}, {"city": "Arlington", "address": "679 Harris Ridge Dr, Arlington, TX 76002", "zip": "76002", "lat": 32.605245, "lon": -97.089918, "price": 3100, "beds": 4, "baths": 2, "sqft": 2150, "dom": 1204}, {"city": "Arlington", "address": "705 Langford Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.655076, "lon": -97.099089, "price": 2300, "beds": 4, "baths": 2, "sqft": 1783, "dom": 1174}, {"city": "Arlington", "address": "3501 Green Hill Dr, Arlington, TX 76014", "zip": "76014", "lat": 32.688808, "lon": -97.095057, "price": 2299, "beds": 3, "baths": 2, "sqft": 1340, "dom": 1234}, {"city": "Arlington", "address": "2806 E Mitchell St, Arlington, TX 76010", "zip": "76010", "lat": 32.725773, "lon": -97.059089, "price": 2000, "beds": 3, "baths": 2, "sqft": 1308, "dom": 1147}, {"city": "Arlington", "address": "1015 Flower Dr, Arlington, TX 76017", "zip": "76017", "lat": 32.65767, "lon": -97.12688, "price": 2175, "beds": 4, "baths": 2, "sqft": 1769, "dom": 1156}, {"city": "Arlington", "address": "6515 Forestview Dr, Arlington, TX 76016", "zip": "76016", "lat": 32.675238, "lon": -97.211951, "price": 2150, "beds": 3, "baths": 2, "sqft": 1918, "dom": 1168}, {"city": "Arlington", "address": "2710 Partridge Ave, Arlington, TX 76017", "zip": "76017", "lat": 32.671669, "lon": -97.154301, "price": 2345, "beds": 3, "baths": 2, "sqft": 1456, "dom": 1124}, {"city": "Arlington", "address": "1615 Wickford Dr, Arlington, TX 76018", "zip": "76018", "lat": 32.655392, "lon": -97.080659, "price": 2590, "beds": 4, "baths": 2, "sqft": 1579, "dom": 1130}, {"city": "Grand Prairie", "address": "2313 Kingsley Dr, Grand Prairie, TX 75050", "zip": "75050", "lat": 32.766564, "lon": -97.036458, "price": 9750, "beds": 5, "baths": 2.5, "sqft": 2910, "dom": 1058}, {"city": "Arlington", "address": "1203 Andrews St, Arlington, TX 76011", "zip": "76011", "lat": 32.754039, "lon": -97.091744, "price": 9750, "beds": 5, "baths": 3, "sqft": 1679, "dom": 1058}, {"city": "Arlington", "address": "905 High Point Rd, Arlington, TX 76015", "zip": "76015", "lat": 32.684473, "lon": -97.120861, "price": 2180, "beds": 3, "baths": 2, "sqft": 1915, "dom": 920}, {"city": "Arlington", "address": "7001 Oconnor St, Arlington, TX 76002", "zip": "76002", "lat": 32.634322, "lon": -97.068367, "price": 3200, "beds": 4, "baths": 2, "sqft": 3266, "dom": 894}]}, {"region": "Charlotte", "date": "2026-09-18", "listings": [{"city": "Charlotte", "address": "10318 Mcgoogan Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.042966, "lon": -80.851439, "price": 700, "beds": 1, "baths": 1, "sqft": 1412, "dom": 1}, {"city": "Charlotte", "address": "11634 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.042977, "lon": -80.815956, "price": 2135, "beds": 3, "baths": 2, "sqft": 1509, "dom": 1}, {"city": "Charlotte", "address": "12429 Dunford St, Charlotte, NC 28277", "zip": "28277", "lat": 35.050088, "lon": -80.804681, "price": 675, "beds": 1, "baths": 1, "sqft": 1800, "dom": 1}, {"city": "Charlotte", "address": "15317 Marvin Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.040553, "lon": -80.853898, "price": 4100, "beds": 4, "baths": 3, "sqft": 3100, "dom": 1}, {"city": "Charlotte", "address": "11520 Destin Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.049722, "lon": -80.812622, "price": 1999, "beds": 2, "baths": 4, "sqft": 1889, "dom": 1}, {"city": "Charlotte", "address": "10730 Coachman Cir, Charlotte, NC 28277", "zip": "28277", "lat": 35.060576, "lon": -80.800255, "price": 2550, "beds": 3, "baths": 2.5, "sqft": 1957, "dom": 1}, {"city": "Charlotte", "address": "8903 Darcy Hopkins Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.045989, "lon": -80.800868, "price": 2699, "beds": 3, "baths": 2.5, "sqft": 2390, "dom": 1}, {"city": "Charlotte", "address": "11208 Maplehurst Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.033531, "lon": -80.827933, "price": 2900, "beds": 4, "baths": 2.5, "sqft": 2615, "dom": 1}, {"city": "Charlotte", "address": "4318 Woods End Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.082435, "lon": -80.796633, "price": 2700, "beds": 4, "baths": 2, "sqft": 2100, "dom": 1}, {"city": "Charlotte", "address": "6926 Wolf Run Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.063396, "lon": -80.832575, "price": 3335, "beds": 5, "baths": 2.5, "sqft": 3639, "dom": 1}, {"city": "Charlotte", "address": "16013 Caranna Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.032524, "lon": -80.865689, "price": 2999, "beds": 5, "baths": 4.5, "sqft": 3195, "dom": 1}, {"city": "Charlotte", "address": "10423 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "lat": 35.060363, "lon": -80.787088, "price": 2900, "beds": 3, "baths": 2.5, "sqft": 2064, "dom": 1293}, {"city": "Charlotte", "address": "11644 James Richard Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.035494, "lon": -80.783252, "price": 4835, "beds": 4, "baths": 4.5, "sqft": 4575, "dom": 129}, {"city": "Charlotte", "address": "11735 Hawick Valley Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.042128, "lon": -80.858089, "price": 2575, "beds": 4, "baths": 2.5, "sqft": 2199, "dom": 119}, {"city": "Charlotte", "address": "11701 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.043572, "lon": -80.815718, "price": 2015, "beds": 3, "baths": 2, "sqft": 1624, "dom": 118}, {"city": "Charlotte", "address": "17430 Westmill Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.019064, "lon": -80.833444, "price": 950, "beds": 1, "baths": 1, "sqft": 150, "dom": 127}, {"city": "Charlotte", "address": "10496 Gunnison Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.037658, "lon": -80.838796, "price": 3500, "beds": 4, "baths": 2.5, "sqft": 3252, "dom": 108}, {"city": "Charlotte", "address": "15640 Sullivan Ridge Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.033523, "lon": -80.860347, "price": 2675, "beds": 3, "baths": 2, "sqft": 2002, "dom": 106}, {"city": "Charlotte", "address": "8915 Gamesford Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.044073, "lon": -80.813527, "price": 2500, "beds": 3, "baths": 2.5, "sqft": 1793, "dom": 102}, {"city": "Charlotte", "address": "10938 Sedgemoor Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.022742, "lon": -80.835803, "price": 2700, "beds": 5, "baths": 2.5, "sqft": 2696, "dom": 87}, {"city": "Charlotte", "address": "7307 Roseland Ave, Charlotte, NC 28277", "zip": "28277", "lat": 35.063147, "lon": -80.805359, "price": 7450, "beds": 5, "baths": 5, "sqft": 4011, "dom": 87}, {"city": "Charlotte", "address": "8123 Cornhill Ave, Charlotte, NC 28277", "zip": "28277", "lat": 35.051139, "lon": -80.781258, "price": 3395, "beds": 5, "baths": 3, "sqft": 2622, "dom": 79}, {"city": "Charlotte", "address": "5100 Piper Glen Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.067956, "lon": -80.814472, "price": 9250, "beds": 5, "baths": 7.5, "sqft": 7286, "dom": 76}, {"city": "Charlotte", "address": "10620 Fairway Ridge Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.069508, "lon": -80.797835, "price": 2595, "beds": 4, "baths": 2.5, "sqft": 1922, "dom": 75}, {"city": "Charlotte", "address": "10822 Chamberlain Hall Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.024575, "lon": -80.83254, "price": 4500, "beds": 6, "baths": 3.5, "sqft": 4764, "dom": 69}, {"city": "Charlotte", "address": "10000 Ridgemore Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.070243, "lon": -80.827074, "price": 2700, "beds": 4, "baths": 2.5, "sqft": 2410, "dom": 69}, {"city": "Charlotte", "address": "15118 Edindale Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.04126, "lon": -80.860259, "price": 2330, "beds": 3, "baths": 2.5, "sqft": 1974, "dom": 68}, {"city": "Charlotte", "address": "6739 Red Maple Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.069179, "lon": -80.832581, "price": 2950, "beds": 4, "baths": 2.5, "sqft": 2846, "dom": 59}, {"city": "Charlotte", "address": "12218 Honor Guard Ave, Charlotte, NC 28277", "zip": "28277", "lat": 35.033704, "lon": -80.853539, "price": 2450, "beds": 3, "baths": 2.5, "sqft": 2014, "dom": 59}, {"city": "Charlotte", "address": "9606 Fairway Ridge Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.070844, "lon": -80.791014, "price": 2950, "beds": 3, "baths": 2.5, "sqft": 2119, "dom": 58}, {"city": "Charlotte", "address": "15569 Stronvar House Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.036136, "lon": -80.852359, "price": 2950, "beds": 2, "baths": 3, "sqft": 1615, "dom": 53}, {"city": "Charlotte", "address": "7023 Blakeney Greens Blvd, Charlotte, NC 28277", "zip": "28277", "lat": 35.038495, "lon": -80.802637, "price": 3100, "beds": 3, "baths": 2.5, "sqft": 1812, "dom": 3}, {"city": "Charlotte", "address": "6611 Flat Creek Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.038424, "lon": -80.798751, "price": 2495, "beds": 3, "baths": 2.5, "sqft": 1787, "dom": 3}, {"city": "Charlotte", "address": "6803 Flat Creek Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.036307, "lon": -80.798795, "price": 2400, "beds": 3, "baths": 2.5, "sqft": 2164, "dom": 4}, {"city": "Charlotte", "address": "16840 Kettlewell Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.025692, "lon": -80.838055, "price": 2880, "beds": 3, "baths": 2.5, "sqft": 1550, "dom": 6}, {"city": "Charlotte", "address": "11005 Stonepath Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.05952, "lon": -80.823372, "price": 3500, "beds": 4, "baths": 2.5, "sqft": 2745, "dom": 7}, {"city": "Charlotte", "address": "8710 Houston Ridge Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.049434, "lon": -80.822021, "price": 2600, "beds": 3, "baths": 2.5, "sqft": 1922, "dom": 8}, {"city": "Charlotte", "address": "12315 Chesley Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.034555, "lon": -80.864485, "price": 3100, "beds": 4, "baths": 3.5, "sqft": 2690, "dom": 9}, {"city": "Charlotte", "address": "9416 Graywell Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.023593, "lon": -80.83921, "price": 2195, "beds": 3, "baths": 2.5, "sqft": 1612, "dom": 10}, {"city": "Charlotte", "address": "6712 Coral Rose Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.053219, "lon": -80.793929, "price": 3200, "beds": 5, "baths": 3, "sqft": 2864, "dom": 10}, {"city": "Charlotte", "address": "10420 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "lat": 35.059873, "lon": -80.786853, "price": 2798, "beds": 3, "baths": 2.5, "sqft": 2028, "dom": 11}, {"city": "Charlotte", "address": "10724 Alvarado Way, Charlotte, NC 28277", "zip": "28277", "lat": 35.060107, "lon": -80.781612, "price": 2595, "beds": 3, "baths": 2.5, "sqft": 2285, "dom": 14}, {"city": "Charlotte", "address": "11731 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.043905, "lon": -80.814813, "price": 2795, "beds": 3, "baths": 2.5, "sqft": 2012, "dom": 14}, {"city": "Charlotte", "address": "6105 Old Corral St, Charlotte, NC 28277", "zip": "28277", "lat": 35.04225, "lon": -80.798144, "price": 3100, "beds": 4, "baths": 2.5, "sqft": 1965, "dom": 15}, {"city": "Charlotte", "address": "11413 Blue Blossom Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.051971, "lon": -80.793874, "price": 3350, "beds": 5, "baths": 4, "sqft": 2843, "dom": 17}, {"city": "Charlotte", "address": "14810 Provence Ln, Charlotte, NC 28277", "zip": "28277", "lat": 35.034554, "lon": -80.865549, "price": 3500, "beds": 6, "baths": 4, "sqft": 3000, "dom": 42}, {"city": "Charlotte", "address": "4811 Old Course Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.069471, "lon": -80.813841, "price": 6900, "beds": 5, "baths": 3.5, "sqft": 5194, "dom": 24}, {"city": "Charlotte", "address": "11228 Dickie Ross Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.024808, "lon": -80.826139, "price": 2300, "beds": 3, "baths": 2, "sqft": 1354, "dom": 29}, {"city": "Charlotte", "address": "17450 Baldwin Hall Dr, Charlotte, NC 28277", "zip": "28277", "lat": 35.020526, "lon": -80.830883, "price": 2800, "beds": 4, "baths": 2.5, "sqft": 2320, "dom": 33}, {"city": "Charlotte", "address": "9303 Winston Hall Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.025229, "lon": -80.825171, "price": 2460, "beds": 4, "baths": 2, "sqft": 1885, "dom": 1}, {"city": "Charlotte", "address": "11604 Charnwood Ct, Charlotte, NC 28277", "zip": "28277", "lat": 35.043395, "lon": -80.817247, "price": 2350, "beds": 3, "baths": 2.5, "sqft": 1823, "dom": 1204}, {"city": "Charlotte", "address": "16100 Sunninghill Park Rd, Charlotte, NC 28277", "zip": "28277", "lat": 35.033955, "lon": -80.851222, "price": 2795, "beds": 5, "baths": 4, "sqft": 2489, "dom": 1}]}];
+
+  var REGION_LABEL = { DFW: "Grand Prairie / Duncanville", Charlotte: "South Charlotte 28277" };
+  // Arlington is paused in the tracker; hide it from older snapshots so trends compare like with like.
+  var EXCLUDED_CITIES = ["Arlington"];
+  var CITY_COLOR = { "Grand Prairie": "dfw", "Arlington": "dfw", "Duncanville": "dfw", "Charlotte": "clt" };
+
+  var els = {
+    snapDate: document.getElementById('snapDate'),
+    totalCount: document.getElementById('totalCount'),
+    historyCount: document.getElementById('historyCount'),
+    quotaText: document.getElementById('quotaText'),
+    tiles: document.getElementById('tiles'),
+    chart: document.getElementById('chart'),
+    mapChart: document.getElementById('mapChart'),
+    hoodGrid: document.getElementById('hoodGrid'),
+    neighborhoodNote: document.getElementById('neighborhoodNote'),
+    trendChart: document.getElementById('trendChart'),
+    trendNote: document.getElementById('trendNote'),
+    regionSeg: document.getElementById('regionSeg'),
+    cityChips: document.getElementById('cityChips'),
+    search: document.getElementById('search'),
+    tbody: document.getElementById('tbody'),
+    tableCount: document.getElementById('tableCount'),
+  };
+
+  // ---------- Load snapshot history: live from the artifact's db, seeded data as fallback ----------
+  async function loadSnapshots() {
+    try {
+      var db = await claude.use('db');
+      if (!db) return SEED_SNAPSHOTS;
+      var snap = await db.collection('snapshots').orderBy('date', 'asc').limit(500).get();
+      if (snap.empty) return SEED_SNAPSHOTS;
+      var docs = snap.docs.map(function (d) { return d.data(); }).filter(function (d) { return d && d.region && d.date && d.listings; });
+      return docs.length ? docs : SEED_SNAPSHOTS;
+    } catch (e) {
+      return SEED_SNAPSHOTS;
+    }
+  }
+
+  var SNAPSHOTS = await loadSnapshots();
+
+  // Flatten every snapshot's listings into one array, each row tagged with its region + snapshot date.
+  var ALL_LISTINGS = [];
+  SNAPSHOTS.forEach(function (snap) {
+    (snap.listings || []).forEach(function (l) {
+      if (EXCLUDED_CITIES.indexOf(l.city) !== -1) return;
+      ALL_LISTINGS.push(Object.assign({}, l, { region: snap.region, date: snap.date }));
+    });
+  });
+
+  var LATEST_DATE = {};
+  SNAPSHOTS.forEach(function (snap) {
+    if (!LATEST_DATE[snap.region] || snap.date > LATEST_DATE[snap.region]) LATEST_DATE[snap.region] = snap.date;
+  });
+
+  // "Current" view = each region's most recent snapshot only (avoids double-counting past weeks).
+  var DATA = ALL_LISTINGS.filter(function (d) { return d.date === LATEST_DATE[d.region]; });
+
+  var snapshotDatesByRegion = {};
+  SNAPSHOTS.forEach(function (s) { (snapshotDatesByRegion[s.region] = snapshotDatesByRegion[s.region] || []).push(s.date); });
+  var totalSnapshots = SNAPSHOTS.length;
+  els.quotaText.textContent = totalSnapshots > 2
+    ? totalSnapshots + ' weekly snapshots collected'
+    : 'Weekly automated snapshot (' + totalSnapshots + ' so far)';
+
+  var ALL_BEDS = Array.from(new Set(DATA.map(function (d) { return d.beds; }))).filter(function (b) { return b != null; }).sort(function (a, b) { return a - b; });
+  var ALL_BATHS = Array.from(new Set(DATA.map(function (d) { return d.baths; }))).filter(function (b) { return b != null; }).sort(function (a, b) { return a - b; });
+  var DEFAULT_BEDS = ALL_BEDS.filter(function (b) { return b === 3; });
+  var DEFAULT_BATHS = ALL_BATHS.filter(function (b) { return b === 2 || b === 2.5; });
+
+  var state = {
+    region: 'all',
+    cities: new Set(DATA.map(function (d) { return d.city; })),
+    beds: new Set(DEFAULT_BEDS.length ? DEFAULT_BEDS : ALL_BEDS),
+    baths: new Set(DEFAULT_BATHS.length ? DEFAULT_BATHS : ALL_BATHS),
+    q: '', sortKey: 'price', sortDir: 'desc',
+    hood: null // {region, key} of a selected neighborhood cluster, or null for all
+  };
+
+  els.snapDate.textContent = DATA[0] ? DATA[0].date : '—';
+  els.totalCount.textContent = DATA.length + ' current listings across both regions';
+  els.historyCount.textContent = totalSnapshots + ' snapshot' + (totalSnapshots === 1 ? '' : 's') + ' in history';
+
+  function median(arr) {
+    var s = arr.slice().sort(function (a, b) { return a - b; });
+    var n = s.length;
+    if (!n) return null;
+    return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2;
+  }
+  function fmt$(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+  // ---------- Region segmented control ----------
+  var regions = ['all', 'DFW', 'Charlotte'];
+  var regionLabels = { all: 'All', DFW: 'DFW Metro', Charlotte: 'South Charlotte' };
+  regions.forEach(function (r) {
+    var b = document.createElement('button');
+    b.textContent = regionLabels[r];
+    b.setAttribute('aria-pressed', r === state.region ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      state.region = r;
+      var allCities = r === 'all' ? DATA.map(function (d) { return d.city; }) :
+        DATA.filter(function (d) { return d.region === r; }).map(function (d) { return d.city; });
+      state.cities = new Set(allCities);
+      Array.prototype.forEach.call(els.regionSeg.children, function (btn) {
+        btn.setAttribute('aria-pressed', btn === b ? 'true' : 'false');
+      });
+      buildCityChips();
+      render();
+    });
+    els.regionSeg.appendChild(b);
+  });
+
+  // ---------- City chips ----------
+  function buildCityChips() {
+    els.cityChips.innerHTML = '';
+    var cities = Array.from(new Set(
+      (state.region === 'all' ? DATA : DATA.filter(function (d) { return d.region === state.region; }))
+        .map(function (d) { return d.city; })
+    )).sort();
+    cities.forEach(function (c) {
+      var chip = document.createElement('button');
+      chip.className = 'chip' + (CITY_COLOR[c] === 'clt' ? ' clt' : '');
+      chip.textContent = c;
+      chip.setAttribute('aria-pressed', state.cities.has(c) ? 'true' : 'false');
+      chip.addEventListener('click', function () {
+        if (state.cities.has(c)) { state.cities.delete(c); } else { state.cities.add(c); }
+        chip.setAttribute('aria-pressed', state.cities.has(c) ? 'true' : 'false');
+        render();
+      });
+      els.cityChips.appendChild(chip);
+    });
+  }
+  buildCityChips();
+
+  // ---------- Bed / bath chips ----------
+  function buildToggleChips(container, values, selectedSet, fmt) {
+    container.innerHTML = '';
+    values.forEach(function (v) {
+      var chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.textContent = fmt(v);
+      chip.setAttribute('aria-pressed', selectedSet.has(v) ? 'true' : 'false');
+      chip.addEventListener('click', function () {
+        if (selectedSet.has(v)) { selectedSet.delete(v); } else { selectedSet.add(v); }
+        chip.setAttribute('aria-pressed', selectedSet.has(v) ? 'true' : 'false');
+        render();
+      });
+      container.appendChild(chip);
+    });
+  }
+  buildToggleChips(document.getElementById('bedChips'), ALL_BEDS, state.beds, function (v) { return v + ' bd'; });
+  buildToggleChips(document.getElementById('bathChips'), ALL_BATHS, state.baths, function (v) { return v + ' ba'; });
+
+  els.search.addEventListener('input', function () { state.q = els.search.value.trim().toLowerCase(); render(); });
+
+  Array.prototype.forEach.call(document.querySelectorAll('thead th'), function (th) {
+    th.addEventListener('click', function () {
+      var key = th.getAttribute('data-key');
+      if (state.sortKey === key) { state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc'; }
+      else { state.sortKey = key; state.sortDir = key === 'address' || key === 'city' || key === 'region' ? 'asc' : 'desc'; }
+      Array.prototype.forEach.call(document.querySelectorAll('thead th'), function (t) { t.removeAttribute('aria-sort'); });
+      th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
+      render();
+    });
+  });
+
+  // Everything except the neighborhood-cluster pick — this is what clustering runs over.
+  function baseFiltered() {
+    return DATA.filter(function (d) {
+      if (state.region !== 'all' && d.region !== state.region) return false;
+      if (!state.cities.has(d.city)) return false;
+      if (d.beds == null || !state.beds.has(d.beds)) return false;
+      if (d.baths == null || !state.baths.has(d.baths)) return false;
+      if (state.q && d.address.toLowerCase().indexOf(state.q) === -1) return false;
+      return true;
+    });
+  }
+
+  function filtered() {
+    var rows = baseFiltered();
+    if (state.hood) {
+      rows = rows.filter(function (d) { return d.region === state.hood.region && d.__hoodKey === state.hood.key; });
+    }
+    return rows;
+  }
+
+  // ---------- Neighborhood clustering ----------
+  function haversineMiles(lat1, lon1, lat2, lon2) {
+    var R = 3958.8;
+    var dLat = (lat2 - lat1) * Math.PI / 180, dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function streetName(address) {
+    var first = (address || '').split(',')[0] || '';
+    return first.replace(/^\d+\s*/, '').replace(/\s*(apt|unit|#).*/i, '').trim() || 'Unmapped';
+  }
+
+  var HOOD_THRESHOLD_MI = 0.35;
+
+  // Single-linkage clustering by distance, per region. Returns [{region, key, listings, lat, lon, name}]
+  function clusterNeighborhoods(rows) {
+    var byRegion = {};
+    rows.forEach(function (d) { (byRegion[d.region] = byRegion[d.region] || []).push(d); });
+
+    var clusters = [];
+    Object.keys(byRegion).forEach(function (region) {
+      var pts = byRegion[region].filter(function (d) { return d.lat != null && d.lon != null; });
+      var n = pts.length;
+      var parent = pts.map(function (_, i) { return i; });
+      function find(x) { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; }
+      function union(a, b) { var ra = find(a), rb = find(b); if (ra !== rb) parent[ra] = rb; }
+      for (var i = 0; i < n; i++) {
+        for (var j = i + 1; j < n; j++) {
+          if (haversineMiles(pts[i].lat, pts[i].lon, pts[j].lat, pts[j].lon) <= HOOD_THRESHOLD_MI) union(i, j);
+        }
+      }
+      var groups = {};
+      pts.forEach(function (d, i) { var r = find(i); (groups[r] = groups[r] || []).push(d); });
+      Object.keys(groups).forEach(function (r) {
+        var members = groups[r];
+        var key = 'c' + r;
+        members.forEach(function (d) { d.__hoodKey = key; });
+        var avgLat = members.reduce(function (s, d) { return s + d.lat; }, 0) / members.length;
+        var avgLon = members.reduce(function (s, d) { return s + d.lon; }, 0) / members.length;
+        var streetCounts = {};
+        members.forEach(function (d) {
+          var s = streetName(d.address);
+          streetCounts[s] = (streetCounts[s] || 0) + 1;
+        });
+        var name = Object.keys(streetCounts).sort(function (a, b) { return streetCounts[b] - streetCounts[a] || a.localeCompare(b); })[0];
+        clusters.push({ region: region, key: key, listings: members, lat: avgLat, lon: avgLon, name: name });
+      });
+    });
+    return clusters;
+  }
+
+  // ---------- Tiles ----------
+  function renderTiles(rows) {
+    var prices = rows.map(function (d) { return d.price; });
+    var n = prices.length;
+    var med = median(prices);
+    var avg = n ? prices.reduce(function (a, b) { return a + b; }, 0) / n : null;
+    var min = n ? Math.min.apply(null, prices) : null;
+    var max = n ? Math.max.apply(null, prices) : null;
+    var tiles = [
+      { label: 'Listings', value: n.toLocaleString('en-US') },
+      { label: 'Median rent', value: med != null ? fmt$(med) : '—' },
+      { label: 'Average rent', value: avg != null ? fmt$(avg) : '—' },
+      { label: 'Range', value: min != null ? fmt$(min) + ' – ' + fmt$(max) : '—' },
+    ];
+    els.tiles.innerHTML = tiles.map(function (t) {
+      return '<div class="tile"><div class="label">' + t.label + '</div><div class="value">' + t.value + '</div></div>';
+    }).join('');
+  }
+
+  // ---------- Chart: median price by bedroom, DFW vs Charlotte ----------
+  function renderChart() {
+    var bedRange = [1, 2, 3, 4, 5];
+    var groups = bedRange.map(function (b) {
+      var dfw = DATA.filter(function (d) { return d.region === 'DFW' && d.beds === b; }).map(function (d) { return d.price; });
+      var clt = DATA.filter(function (d) { return d.region === 'Charlotte' && d.beds === b; }).map(function (d) { return d.price; });
+      return { bed: b, dfw: median(dfw), dfwN: dfw.length, clt: median(clt), cltN: clt.length };
+    });
+
+    var W = 680, H = 260, padL = 46, padR = 12, padT = 16, padB = 34;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var maxVal = Math.max.apply(null, groups.flatMap(function (g) { return [g.dfw || 0, g.clt || 0]; })) * 1.15;
+
+    function y(v) { return padT + plotH - (v / maxVal) * plotH; }
+
+    var svg = els.chart;
+    var parts = [];
+
+    // gridlines + y labels
+    var steps = 4;
+    for (var i = 0; i <= steps; i++) {
+      var val = (maxVal / steps) * i;
+      var yy = y(val);
+      parts.push('<line class="gridline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '"></line>');
+      parts.push('<text class="axis-label" x="' + (padL - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + (val >= 1000 ? '$' + Math.round(val / 1000) + 'k' : '$' + Math.round(val)) + '</text>');
+    }
+    parts.push('<line class="baseline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y(0) + '" y2="' + y(0) + '"></line>');
+
+    var groupW = plotW / groups.length;
+    var barW = Math.min(30, groupW * 0.28);
+    var gap = 6;
+
+    groups.forEach(function (g, gi) {
+      var cx = padL + groupW * gi + groupW / 2;
+      if (g.dfwN) {
+        var x1 = cx - gap / 2 - barW;
+        var yv1 = y(g.dfw);
+        parts.push('<rect class="bar-dfw" x="' + x1 + '" y="' + yv1 + '" width="' + barW + '" height="' + (y(0) - yv1) + '" rx="3"></rect>');
+        parts.push('<text class="valtag" x="' + (x1 + barW / 2) + '" y="' + (yv1 - 6) + '" text-anchor="middle">' + fmt$(g.dfw) + '</text>');
+      }
+      if (g.cltN) {
+        var x2 = cx + gap / 2;
+        var yv2 = y(g.clt);
+        parts.push('<rect class="bar-clt" x="' + x2 + '" y="' + yv2 + '" width="' + barW + '" height="' + (y(0) - yv2) + '" rx="3"></rect>');
+        parts.push('<text class="valtag" x="' + (x2 + barW / 2) + '" y="' + (yv2 - 6) + '" text-anchor="middle">' + fmt$(g.clt) + '</text>');
+      }
+      parts.push('<text class="axis-label" x="' + cx + '" y="' + (y(0) + 20) + '" text-anchor="middle">' + g.bed + ' bd</text>');
+    });
+
+    svg.innerHTML = parts.join('');
+  }
+
+  // ---------- Neighborhoods: bubble map + cards, clickable to filter ----------
+  function renderNeighborhoods() {
+    var rows = baseFiltered();
+    var clusters = clusterNeighborhoods(rows);
+    var regionsPresent = Array.from(new Set(clusters.map(function (c) { return c.region; })));
+
+    var W = 680, H = 260;
+    var parts = [];
+
+    function drawRegionMap(regionClusters, x0, x1, colorClass) {
+      if (!regionClusters.length) return;
+      var pad = 22;
+      var lats = regionClusters.map(function (c) { return c.lat; });
+      var lons = regionClusters.map(function (c) { return c.lon; });
+      var latMin = Math.min.apply(null, lats), latMax = Math.max.apply(null, lats);
+      var lonMin = Math.min.apply(null, lons), lonMax = Math.max.apply(null, lons);
+      var latSpan = Math.max(latMax - latMin, 0.01), lonSpan = Math.max(lonMax - lonMin, 0.01);
+      function px(lon) { return x0 + pad + ((lon - lonMin) / lonSpan) * (x1 - x0 - pad * 2); }
+      function py(lat) { return pad + (1 - (lat - latMin) / latSpan) * (H - pad * 2); }
+
+      var maxCount = Math.max.apply(null, regionClusters.map(function (c) { return c.listings.length; }));
+      regionClusters.forEach(function (c) {
+        var r = 9 + Math.sqrt(c.listings.length / maxCount) * 20;
+        var cx = px(c.lon), cy = py(c.lat);
+        var isSelected = state.hood && state.hood.region === c.region && state.hood.key === c.key;
+        var isDimmed = state.hood && !isSelected;
+        parts.push('<circle class="hood-bubble ' + colorClass + (isDimmed ? ' dimmed' : '') + '" data-region="' + c.region + '" data-key="' + c.key + '" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r.toFixed(1) + '"' + (isSelected ? ' stroke="var(--text-primary)" stroke-width="3"' : '') + '></circle>');
+        if (r >= 11) {
+          parts.push('<text class="hood-count" x="' + cx.toFixed(1) + '" y="' + (cy + 4).toFixed(1) + '" font-size="12">' + c.listings.length + '</text>');
+        }
+      });
+    }
+
+    if (regionsPresent.length === 2) {
+      drawRegionMap(clusters.filter(function (c) { return c.region === 'DFW'; }), 0, W / 2, 'bar-dfw');
+      drawRegionMap(clusters.filter(function (c) { return c.region === 'Charlotte'; }), W / 2, W, 'bar-clt');
+      parts.push('<line class="gridline" x1="' + (W / 2) + '" x2="' + (W / 2) + '" y1="8" y2="' + (H - 8) + '"></line>');
+      parts.push('<text class="axis-label" x="12" y="16" font-weight="700">DFW</text>');
+      parts.push('<text class="axis-label" x="' + (W / 2 + 12) + '" y="16" font-weight="700">Charlotte</text>');
+    } else if (regionsPresent.length === 1) {
+      var colorClass = regionsPresent[0] === 'DFW' ? 'bar-dfw' : 'bar-clt';
+      drawRegionMap(clusters, 0, W, colorClass);
+    }
+
+    els.mapChart.innerHTML = parts.join('');
+    Array.prototype.forEach.call(els.mapChart.querySelectorAll('.hood-bubble'), function (el) {
+      el.addEventListener('click', function () { toggleHood(el.getAttribute('data-region'), el.getAttribute('data-key')); });
+    });
+
+    var sorted = clusters.slice().sort(function (a, b) { return b.listings.length - a.listings.length; }).slice(0, 12);
+    var cardsHtml = sorted.map(function (c) {
+      var prices = c.listings.map(function (d) { return d.price; });
+      var med = median(prices);
+      var isSelected = state.hood && state.hood.region === c.region && state.hood.key === c.key;
+      var isClt = c.region === 'Charlotte';
+      return '<button class="hood-card' + (isClt ? ' clt' : '') + '" aria-pressed="' + (isSelected ? 'true' : 'false') + '" data-region="' + c.region + '" data-key="' + c.key + '">' +
+        '<div class="hood-name"><span>' + c.name + '</span><span class="hood-badge' + (isClt ? ' clt' : '') + '">' + c.listings.length + '</span></div>' +
+        '<div class="hood-stats">Median ' + fmt$(med) + ' · ' + c.listings[0].city + '</div>' +
+        '</button>';
+    }).join('');
+    var clearHtml = state.hood ? '<button class="hood-clear" id="hoodClear">Show all neighborhoods ×</button>' : '';
+    els.hoodGrid.innerHTML = cardsHtml + clearHtml;
+
+    Array.prototype.forEach.call(els.hoodGrid.querySelectorAll('.hood-card'), function (el) {
+      el.addEventListener('click', function () { toggleHood(el.getAttribute('data-region'), el.getAttribute('data-key')); });
+    });
+    var clearBtn = document.getElementById('hoodClear');
+    if (clearBtn) clearBtn.addEventListener('click', function () { state.hood = null; render(); });
+
+    els.neighborhoodNote.textContent = clusters.length
+      ? '— ' + clusters.length + ' cluster' + (clusters.length === 1 ? '' : 's') + ' within about a third of a mile of each other · click one to filter'
+      : '— no coordinates in range for the current filters';
+  }
+
+  function toggleHood(region, key) {
+    if (state.hood && state.hood.region === region && state.hood.key === key) { state.hood = null; }
+    else { state.hood = { region: region, key: key }; }
+    render();
+  }
+
+  // ---------- Trend: median price per snapshot date, by region, respecting bed/bath filter ----------
+  function renderTrend() {
+    var byRegionDate = {};
+    ALL_LISTINGS.forEach(function (d) {
+      if (d.beds == null || !state.beds.has(d.beds)) return;
+      if (d.baths == null || !state.baths.has(d.baths)) return;
+      if (!state.cities.has(d.city)) return;
+      var key = d.region + '|' + d.date;
+      (byRegionDate[key] = byRegionDate[key] || []).push(d.price);
+    });
+
+    var series = { DFW: [], Charlotte: [] };
+    Object.keys(byRegionDate).forEach(function (key) {
+      var parts = key.split('|'), region = parts[0], date = parts[1];
+      if (!series[region]) return;
+      series[region].push({ date: date, value: median(byRegionDate[key]), n: byRegionDate[key].length });
+    });
+    Object.keys(series).forEach(function (r) { series[r].sort(function (a, b) { return a.date < b.date ? -1 : 1; }); });
+
+    var allDates = Array.from(new Set(ALL_LISTINGS.map(function (d) { return d.date; }))).sort();
+    var maxPoints = Math.max(series.DFW.length, series.Charlotte.length);
+
+    if (maxPoints < 2) {
+      els.trendChart.innerHTML = '';
+      els.trendNote.textContent = 'Only ' + allDates.length + ' snapshot' + (allDates.length === 1 ? '' : 's') + ' so far — the trend line fills in as weekly snapshots accumulate.';
+      return;
+    }
+    els.trendNote.textContent = allDates.length + ' snapshots from ' + allDates[0] + ' to ' + allDates[allDates.length - 1] + '.';
+
+    var W = 680, H = 220, padL = 50, padR = 16, padT = 16, padB = 30;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var allVals = series.DFW.concat(series.Charlotte).map(function (p) { return p.value; });
+    var maxVal = Math.max.apply(null, allVals) * 1.15;
+    var minVal = 0;
+
+    function x(i) { return padL + (allDates.length > 1 ? (i / (allDates.length - 1)) * plotW : plotW / 2); }
+    function y(v) { return padT + plotH - ((v - minVal) / (maxVal - minVal)) * plotH; }
+
+    var parts = [];
+    var steps = 4;
+    for (var i = 0; i <= steps; i++) {
+      var val = (maxVal / steps) * i;
+      var yy = y(val);
+      parts.push('<line class="gridline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '"></line>');
+      parts.push('<text class="axis-label" x="' + (padL - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + (val >= 1000 ? '$' + Math.round(val / 1000) + 'k' : '$' + Math.round(val)) + '</text>');
+    }
+
+    allDates.forEach(function (d, i) {
+      if (i === 0 || i === allDates.length - 1 || allDates.length <= 6) {
+        parts.push('<text class="axis-label" x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + d.slice(5) + '</text>');
+      }
+    });
+
+    function drawSeries(pts, colorClass, dotClass) {
+      if (pts.length < 1) return;
+      var coords = pts.map(function (p) {
+        var idx = allDates.indexOf(p.date);
+        return [x(idx), y(p.value)];
+      });
+      if (coords.length >= 2) {
+        var d = coords.map(function (c, i) { return (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1); }).join(' ');
+        parts.push('<path class="' + colorClass + '" d="' + d + '"></path>');
+      }
+      coords.forEach(function (c, i) {
+        parts.push('<circle class="' + dotClass + '" cx="' + c[0] + '" cy="' + c[1] + '" r="4"></circle>');
+      });
+      // Label the last point
+      var last = coords[coords.length - 1];
+      parts.push('<text class="valtag" x="' + last[0] + '" y="' + (last[1] - 10) + '" text-anchor="middle">' + fmt$(pts[pts.length - 1].value) + '</text>');
+    }
+
+    drawSeries(series.DFW, 'line-dfw', 'dot-dfw');
+    drawSeries(series.Charlotte, 'line-clt', 'dot-clt');
+
+    els.trendChart.innerHTML = parts.join('');
+  }
+
+  // ---------- Table ----------
+  function renderTable() {
+    var rows = filtered();
+    els.tableCount.textContent = '(' + rows.length + ')';
+
+    var key = state.sortKey, dir = state.sortDir === 'asc' ? 1 : -1;
+    rows = rows.slice().sort(function (a, b) {
+      var av = a[key], bv = b[key];
+      if (typeof av === 'string') return av.localeCompare(bv) * dir;
+      av = av == null ? -Infinity : av; bv = bv == null ? -Infinity : bv;
+      return (av - bv) * dir;
+    });
+
+    if (!rows.length) {
+      els.tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No listings match these filters.</td></tr>';
+      return;
+    }
+
+    els.tbody.innerHTML = rows.map(function (d) {
+      var tagClass = CITY_COLOR[d.city] === 'clt' ? 'clt' : 'dfw';
+      return '<tr>' +
+        '<td><span class="region-tag ' + tagClass + '"><i></i>' + regionLabels[d.region] + '</span></td>' +
+        '<td>' + d.city + '</td>' +
+        '<td class="addr">' + d.address + '</td>' +
+        '<td class="price">' + fmt$(d.price) + '</td>' +
+        '<td class="num">' + (d.beds != null ? d.beds : '—') + '</td>' +
+        '<td class="num">' + (d.baths != null ? d.baths : '—') + '</td>' +
+        '<td class="num">' + (d.sqft != null ? Math.round(d.sqft).toLocaleString('en-US') : '—') + '</td>' +
+        '<td class="num">' + (d.dom != null ? d.dom : '—') + '</td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function render() {
+    renderNeighborhoods();
+    renderTiles(filtered());
+    renderTable();
+    renderTrend();
+  }
+
+  renderChart();
+  render();
+})();
+</script>
+
+</body></html>

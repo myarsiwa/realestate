@@ -1,0 +1,776 @@
+<title>Rent Watch For DFWSMB LLC</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --plane:          #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --series-dfw:      #2a78d6;
+    --series-dfw-soft: #cde2fb;
+    --series-clt:      #eb6834;
+    --series-clt-soft: #fbdccb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --plane:          #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --series-dfw:      #3987e5;
+      --series-dfw-soft: #1c3a5c;
+      --series-clt:      #d95926;
+      --series-clt-soft: #5c2e17;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --plane:          #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --gridline:       #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --series-dfw:      #3987e5;
+    --series-dfw-soft: #1c3a5c;
+    --series-clt:      #d95926;
+    --series-clt-soft: #5c2e17;
+  }
+
+  .viz-root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--plane);
+    color: var(--text-primary);
+    padding: 24px 16px 48px;
+    box-sizing: border-box;
+  }
+  .viz-root * { box-sizing: border-box; }
+  .wrap { max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+  header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+  header.top h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--text-secondary); }
+  .meta b { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+
+  .quota-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-secondary);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 4px 10px; background: var(--surface-1);
+  }
+  .quota-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--series-dfw); }
+
+  .segmented { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface-1); }
+  .segmented button {
+    appearance: none; border: none; background: transparent; color: var(--text-secondary);
+    font: inherit; font-size: 13px; font-weight: 600; padding: 8px 14px; cursor: pointer;
+    border-right: 1px solid var(--border);
+  }
+  .segmented button:last-child { border-right: none; }
+  .segmented button[aria-pressed="true"] { background: var(--text-primary); color: var(--surface-1); }
+  .segmented button:focus-visible { outline: 2px solid var(--series-dfw); outline-offset: -2px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    appearance: none; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-1);
+    color: var(--text-secondary); font: inherit; font-size: 12.5px; font-weight: 600; padding: 6px 12px; cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--series-dfw-soft); color: var(--text-primary); border-color: var(--series-dfw); }
+  .chip[aria-pressed="true"].clt { background: var(--series-clt-soft); border-color: var(--series-clt); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+  .tile .value { font-size: 24px; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .tile .sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  .panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+  .panel h2 { font-size: 14px; font-weight: 700; margin: 0 0 14px; }
+  .panel h2 .n { color: var(--text-muted); font-weight: 500; }
+
+  .chart-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .chart-legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+  .barchart-scroll { overflow-x: auto; }
+  svg text { fill: var(--text-secondary); font-size: 11px; font-family: inherit; }
+  svg .axis-label { fill: var(--text-muted); }
+  svg .gridline { stroke: var(--gridline); stroke-width: 1; }
+  svg .baseline { stroke: var(--baseline); stroke-width: 1; }
+  svg .bar-dfw { fill: var(--series-dfw); }
+  svg .bar-clt { fill: var(--series-clt); }
+  svg .valtag { fill: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+  svg .line-dfw { stroke: var(--series-dfw); fill: none; stroke-width: 2; }
+  svg .line-clt { stroke: var(--series-clt); fill: none; stroke-width: 2; }
+  svg .dot-dfw { fill: var(--surface-1); stroke: var(--series-dfw); stroke-width: 2; }
+  svg .dot-clt { fill: var(--surface-1); stroke: var(--series-clt); stroke-width: 2; }
+
+  .table-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .table-controls input[type="search"] {
+    flex: 1 1 200px; min-width: 0; background: var(--plane); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 10px; font: inherit; font-size: 13px; color: var(--text-primary);
+  }
+  .table-controls input[type="search"]::placeholder { color: var(--text-muted); }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 13px; }
+  thead th {
+    position: sticky; top: 0; background: var(--surface-1); text-align: left; padding: 9px 12px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted);
+    border-bottom: 1px solid var(--border); cursor: pointer; white-space: nowrap; user-select: none;
+  }
+  thead th .arrow { opacity: 0.4; margin-left: 3px; }
+  thead th[aria-sort="ascending"] .arrow, thead th[aria-sort="descending"] .arrow { opacity: 1; color: var(--series-dfw); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  tbody td.price { font-variant-numeric: tabular-nums; font-weight: 600; }
+  tbody td.num { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+  tbody td.addr { white-space: normal; min-width: 220px; color: var(--text-primary); }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--plane); }
+  .region-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-secondary); }
+  .region-tag i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .region-tag.dfw i { background: var(--series-dfw); }
+  .region-tag.clt i { background: var(--series-clt); }
+
+  .empty-row td { text-align: center; color: var(--text-muted); padding: 24px; }
+
+  .house-icon { width: 16px; height: 16px; vertical-align: -2px; margin-right: 6px; fill: none; stroke: var(--text-primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  svg .hood-bubble { stroke: var(--surface-1); stroke-width: 2; cursor: pointer; transition: opacity 0.15s; }
+  svg .hood-bubble:hover { opacity: 0.82; }
+  svg .hood-bubble.dimmed { opacity: 0.25; }
+  svg .hood-count { fill: #fff; font-weight: 700; text-anchor: middle; pointer-events: none; }
+
+  .hood-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin-top: 14px; }
+  .hood-card {
+    text-align: left; border: 1px solid var(--border); border-radius: 14px; background: var(--plane);
+    padding: 12px 14px; cursor: pointer; font: inherit; color: inherit;
+    box-shadow: 0 1px 0 var(--border); transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .hood-card:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+  .hood-card[aria-pressed="true"] { border-color: var(--series-dfw); background: var(--series-dfw-soft); }
+  .hood-card[aria-pressed="true"].clt { border-color: var(--series-clt); background: var(--series-clt-soft); }
+  .hood-card .hood-name { font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+  .hood-card .hood-badge {
+    font-size: 11px; font-weight: 700; border-radius: 999px; padding: 1px 8px; flex-shrink: 0;
+    background: var(--series-dfw); color: #fff;
+  }
+  .hood-card .hood-badge.clt { background: var(--series-clt); }
+  .hood-card .hood-stats { font-size: 12px; color: var(--text-secondary); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .hood-clear {
+    grid-column: 1 / -1; text-align: center; font-size: 12.5px; color: var(--series-dfw); font-weight: 600;
+    background: none; border: none; cursor: pointer; padding: 4px; font-family: inherit;
+  }
+
+  footer.note { font-size: 12px; color: var(--text-muted); text-align: center; }
+
+  @media (max-width: 560px) {
+    thead th, tbody td { padding: 8px; font-size: 12px; }
+  }
+</style>
+
+<div class="viz-root">
+  <div class="wrap">
+    <header class="top">
+      <h1>Rent Watch</h1>
+      <div class="quota-badge"><span class="dot"></span> <span id="quotaText">Weekly automated snapshot</span></div>
+    </header>
+    <div class="meta">
+      <span>Latest snapshot: <b id="snapDate"></b></span>
+      <span>Single-family, active listings</span>
+      <span id="totalCount"></span>
+      <span id="historyCount"></span>
+    </div>
+
+    <section class="panel">
+      <h2>Portfolio match <span class="n">— your comps: 3 bed, 2–2.5 bath</span></h2>
+      <div class="table-controls" style="margin-bottom:0">
+        <div class="chips" id="bedChips" role="group" aria-label="Filter by bedrooms"></div>
+        <div class="chips" id="bathChips" role="group" aria-label="Filter by bathrooms"></div>
+      </div>
+    </section>
+
+    <div class="tiles" id="tiles"></div>
+
+    <section class="panel">
+      <h2><svg class="house-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5" /><path d="M5.5 10v9a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1v-9" /></svg>Neighborhoods <span class="n" id="neighborhoodNote">— properties within about a third of a mile of each other, grouped together</span></h2>
+      <div class="barchart-scroll">
+        <svg id="mapChart" viewBox="0 0 680 260" role="img" aria-label="Map of listing clusters by neighborhood, DFW and South Charlotte"></svg>
+      </div>
+      <div class="hood-grid" id="hoodGrid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Median asking rent by bedroom count <span class="n">(full market, unfiltered — for context)</span></h2>
+      <div class="chart-legend">
+        <span><i style="background:var(--series-dfw)"></i>Grand Prairie / Arlington / Duncanville</span>
+        <span><i style="background:var(--series-clt)"></i>South Charlotte 28277</span>
+      </div>
+      <div class="barchart-scroll">
+        <svg id="chart" viewBox="0 0 680 260" role="img" aria-label="Median asking rent by bedroom count, compared across DFW and South Charlotte"></svg>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Rent trend over time <span class="n">— median, filtered to the bed/bath selection above</span></h2>
+      <div class="chart-legend">
+        <span><i style="background:var(--series-dfw)"></i>Grand Prairie / Arlington / Duncanville</span>
+        <span><i style="background:var(--series-clt)"></i>South Charlotte 28277</span>
+      </div>
+      <div class="barchart-scroll">
+        <svg id="trendChart" viewBox="0 0 680 220" role="img" aria-label="Median asking rent over time, DFW vs South Charlotte"></svg>
+      </div>
+      <div class="meta" id="trendNote" style="margin-top:8px"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Listings <span class="n" id="tableCount"></span></h2>
+      <div class="table-controls">
+        <div class="segmented" id="regionSeg" role="group" aria-label="Filter by region"></div>
+        <div class="chips" id="cityChips" role="group" aria-label="Filter by city"></div>
+        <input type="search" id="search" placeholder="Search address…" aria-label="Search address">
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th data-key="region">Region<span class="arrow">↕</span></th>
+              <th data-key="city">City<span class="arrow">↕</span></th>
+              <th data-key="address">Address<span class="arrow">↕</span></th>
+              <th data-key="price">Price<span class="arrow">↕</span></th>
+              <th data-key="beds">Bd<span class="arrow">↕</span></th>
+              <th data-key="baths">Ba<span class="arrow">↕</span></th>
+              <th data-key="sqft">Sqft<span class="arrow">↕</span></th>
+              <th data-key="dom">DOM<span class="arrow">↕</span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="note">Data via RentCast API · A scheduled cloud agent pulls a fresh snapshot for each region weekly</footer>
+  </div>
+</div>
+
+<script>
+(async function () {
+  var SEED_SNAPSHOTS = __SEED_SNAPSHOTS_JSON__;
+
+  var REGION_LABEL = { DFW: "Grand Prairie / Arlington / Duncanville", Charlotte: "South Charlotte 28277" };
+  var CITY_COLOR = { "Grand Prairie": "dfw", "Arlington": "dfw", "Duncanville": "dfw", "Charlotte": "clt" };
+
+  var els = {
+    snapDate: document.getElementById('snapDate'),
+    totalCount: document.getElementById('totalCount'),
+    historyCount: document.getElementById('historyCount'),
+    quotaText: document.getElementById('quotaText'),
+    tiles: document.getElementById('tiles'),
+    chart: document.getElementById('chart'),
+    mapChart: document.getElementById('mapChart'),
+    hoodGrid: document.getElementById('hoodGrid'),
+    neighborhoodNote: document.getElementById('neighborhoodNote'),
+    trendChart: document.getElementById('trendChart'),
+    trendNote: document.getElementById('trendNote'),
+    regionSeg: document.getElementById('regionSeg'),
+    cityChips: document.getElementById('cityChips'),
+    search: document.getElementById('search'),
+    tbody: document.getElementById('tbody'),
+    tableCount: document.getElementById('tableCount'),
+  };
+
+  // ---------- Load snapshot history: live from the artifact's db, seeded data as fallback ----------
+  async function loadSnapshots() {
+    try {
+      var db = await claude.use('db');
+      if (!db) return SEED_SNAPSHOTS;
+      var snap = await db.collection('snapshots').orderBy('date', 'asc').limit(500).get();
+      if (snap.empty) return SEED_SNAPSHOTS;
+      var docs = snap.docs.map(function (d) { return d.data(); }).filter(function (d) { return d && d.region && d.date && d.listings; });
+      return docs.length ? docs : SEED_SNAPSHOTS;
+    } catch (e) {
+      return SEED_SNAPSHOTS;
+    }
+  }
+
+  var SNAPSHOTS = await loadSnapshots();
+
+  // Flatten every snapshot's listings into one array, each row tagged with its region + snapshot date.
+  var ALL_LISTINGS = [];
+  SNAPSHOTS.forEach(function (snap) {
+    (snap.listings || []).forEach(function (l) {
+      ALL_LISTINGS.push(Object.assign({}, l, { region: snap.region, date: snap.date }));
+    });
+  });
+
+  var LATEST_DATE = {};
+  SNAPSHOTS.forEach(function (snap) {
+    if (!LATEST_DATE[snap.region] || snap.date > LATEST_DATE[snap.region]) LATEST_DATE[snap.region] = snap.date;
+  });
+
+  // "Current" view = each region's most recent snapshot only (avoids double-counting past weeks).
+  var DATA = ALL_LISTINGS.filter(function (d) { return d.date === LATEST_DATE[d.region]; });
+
+  var snapshotDatesByRegion = {};
+  SNAPSHOTS.forEach(function (s) { (snapshotDatesByRegion[s.region] = snapshotDatesByRegion[s.region] || []).push(s.date); });
+  var totalSnapshots = SNAPSHOTS.length;
+  els.quotaText.textContent = totalSnapshots > 2
+    ? totalSnapshots + ' weekly snapshots collected'
+    : 'Weekly automated snapshot (' + totalSnapshots + ' so far)';
+
+  var ALL_BEDS = Array.from(new Set(DATA.map(function (d) { return d.beds; }))).filter(function (b) { return b != null; }).sort(function (a, b) { return a - b; });
+  var ALL_BATHS = Array.from(new Set(DATA.map(function (d) { return d.baths; }))).filter(function (b) { return b != null; }).sort(function (a, b) { return a - b; });
+  var DEFAULT_BEDS = ALL_BEDS.filter(function (b) { return b === 3; });
+  var DEFAULT_BATHS = ALL_BATHS.filter(function (b) { return b === 2 || b === 2.5; });
+
+  var state = {
+    region: 'all',
+    cities: new Set(DATA.map(function (d) { return d.city; })),
+    beds: new Set(DEFAULT_BEDS.length ? DEFAULT_BEDS : ALL_BEDS),
+    baths: new Set(DEFAULT_BATHS.length ? DEFAULT_BATHS : ALL_BATHS),
+    q: '', sortKey: 'price', sortDir: 'desc',
+    hood: null // {region, key} of a selected neighborhood cluster, or null for all
+  };
+
+  els.snapDate.textContent = DATA[0] ? DATA[0].date : '—';
+  els.totalCount.textContent = DATA.length + ' current listings across both regions';
+  els.historyCount.textContent = totalSnapshots + ' snapshot' + (totalSnapshots === 1 ? '' : 's') + ' in history';
+
+  function median(arr) {
+    var s = arr.slice().sort(function (a, b) { return a - b; });
+    var n = s.length;
+    if (!n) return null;
+    return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2;
+  }
+  function fmt$(v) { return '$' + Math.round(v).toLocaleString('en-US'); }
+
+  // ---------- Region segmented control ----------
+  var regions = ['all', 'DFW', 'Charlotte'];
+  var regionLabels = { all: 'All', DFW: 'DFW Metro', Charlotte: 'South Charlotte' };
+  regions.forEach(function (r) {
+    var b = document.createElement('button');
+    b.textContent = regionLabels[r];
+    b.setAttribute('aria-pressed', r === state.region ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      state.region = r;
+      var allCities = r === 'all' ? DATA.map(function (d) { return d.city; }) :
+        DATA.filter(function (d) { return d.region === r; }).map(function (d) { return d.city; });
+      state.cities = new Set(allCities);
+      Array.prototype.forEach.call(els.regionSeg.children, function (btn) {
+        btn.setAttribute('aria-pressed', btn === b ? 'true' : 'false');
+      });
+      buildCityChips();
+      render();
+    });
+    els.regionSeg.appendChild(b);
+  });
+
+  // ---------- City chips ----------
+  function buildCityChips() {
+    els.cityChips.innerHTML = '';
+    var cities = Array.from(new Set(
+      (state.region === 'all' ? DATA : DATA.filter(function (d) { return d.region === state.region; }))
+        .map(function (d) { return d.city; })
+    )).sort();
+    cities.forEach(function (c) {
+      var chip = document.createElement('button');
+      chip.className = 'chip' + (CITY_COLOR[c] === 'clt' ? ' clt' : '');
+      chip.textContent = c;
+      chip.setAttribute('aria-pressed', state.cities.has(c) ? 'true' : 'false');
+      chip.addEventListener('click', function () {
+        if (state.cities.has(c)) { state.cities.delete(c); } else { state.cities.add(c); }
+        chip.setAttribute('aria-pressed', state.cities.has(c) ? 'true' : 'false');
+        render();
+      });
+      els.cityChips.appendChild(chip);
+    });
+  }
+  buildCityChips();
+
+  // ---------- Bed / bath chips ----------
+  function buildToggleChips(container, values, selectedSet, fmt) {
+    container.innerHTML = '';
+    values.forEach(function (v) {
+      var chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.textContent = fmt(v);
+      chip.setAttribute('aria-pressed', selectedSet.has(v) ? 'true' : 'false');
+      chip.addEventListener('click', function () {
+        if (selectedSet.has(v)) { selectedSet.delete(v); } else { selectedSet.add(v); }
+        chip.setAttribute('aria-pressed', selectedSet.has(v) ? 'true' : 'false');
+        render();
+      });
+      container.appendChild(chip);
+    });
+  }
+  buildToggleChips(document.getElementById('bedChips'), ALL_BEDS, state.beds, function (v) { return v + ' bd'; });
+  buildToggleChips(document.getElementById('bathChips'), ALL_BATHS, state.baths, function (v) { return v + ' ba'; });
+
+  els.search.addEventListener('input', function () { state.q = els.search.value.trim().toLowerCase(); render(); });
+
+  Array.prototype.forEach.call(document.querySelectorAll('thead th'), function (th) {
+    th.addEventListener('click', function () {
+      var key = th.getAttribute('data-key');
+      if (state.sortKey === key) { state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc'; }
+      else { state.sortKey = key; state.sortDir = key === 'address' || key === 'city' || key === 'region' ? 'asc' : 'desc'; }
+      Array.prototype.forEach.call(document.querySelectorAll('thead th'), function (t) { t.removeAttribute('aria-sort'); });
+      th.setAttribute('aria-sort', state.sortDir === 'asc' ? 'ascending' : 'descending');
+      render();
+    });
+  });
+
+  // Everything except the neighborhood-cluster pick — this is what clustering runs over.
+  function baseFiltered() {
+    return DATA.filter(function (d) {
+      if (state.region !== 'all' && d.region !== state.region) return false;
+      if (!state.cities.has(d.city)) return false;
+      if (d.beds == null || !state.beds.has(d.beds)) return false;
+      if (d.baths == null || !state.baths.has(d.baths)) return false;
+      if (state.q && d.address.toLowerCase().indexOf(state.q) === -1) return false;
+      return true;
+    });
+  }
+
+  function filtered() {
+    var rows = baseFiltered();
+    if (state.hood) {
+      rows = rows.filter(function (d) { return d.region === state.hood.region && d.__hoodKey === state.hood.key; });
+    }
+    return rows;
+  }
+
+  // ---------- Neighborhood clustering ----------
+  function haversineMiles(lat1, lon1, lat2, lon2) {
+    var R = 3958.8;
+    var dLat = (lat2 - lat1) * Math.PI / 180, dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function streetName(address) {
+    var first = (address || '').split(',')[0] || '';
+    return first.replace(/^\d+\s*/, '').replace(/\s*(apt|unit|#).*/i, '').trim() || 'Unmapped';
+  }
+
+  var HOOD_THRESHOLD_MI = 0.35;
+
+  // Single-linkage clustering by distance, per region. Returns [{region, key, listings, lat, lon, name}]
+  function clusterNeighborhoods(rows) {
+    var byRegion = {};
+    rows.forEach(function (d) { (byRegion[d.region] = byRegion[d.region] || []).push(d); });
+
+    var clusters = [];
+    Object.keys(byRegion).forEach(function (region) {
+      var pts = byRegion[region].filter(function (d) { return d.lat != null && d.lon != null; });
+      var n = pts.length;
+      var parent = pts.map(function (_, i) { return i; });
+      function find(x) { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; }
+      function union(a, b) { var ra = find(a), rb = find(b); if (ra !== rb) parent[ra] = rb; }
+      for (var i = 0; i < n; i++) {
+        for (var j = i + 1; j < n; j++) {
+          if (haversineMiles(pts[i].lat, pts[i].lon, pts[j].lat, pts[j].lon) <= HOOD_THRESHOLD_MI) union(i, j);
+        }
+      }
+      var groups = {};
+      pts.forEach(function (d, i) { var r = find(i); (groups[r] = groups[r] || []).push(d); });
+      Object.keys(groups).forEach(function (r) {
+        var members = groups[r];
+        var key = 'c' + r;
+        members.forEach(function (d) { d.__hoodKey = key; });
+        var avgLat = members.reduce(function (s, d) { return s + d.lat; }, 0) / members.length;
+        var avgLon = members.reduce(function (s, d) { return s + d.lon; }, 0) / members.length;
+        var streetCounts = {};
+        members.forEach(function (d) {
+          var s = streetName(d.address);
+          streetCounts[s] = (streetCounts[s] || 0) + 1;
+        });
+        var name = Object.keys(streetCounts).sort(function (a, b) { return streetCounts[b] - streetCounts[a] || a.localeCompare(b); })[0];
+        clusters.push({ region: region, key: key, listings: members, lat: avgLat, lon: avgLon, name: name });
+      });
+    });
+    return clusters;
+  }
+
+  // ---------- Tiles ----------
+  function renderTiles(rows) {
+    var prices = rows.map(function (d) { return d.price; });
+    var n = prices.length;
+    var med = median(prices);
+    var avg = n ? prices.reduce(function (a, b) { return a + b; }, 0) / n : null;
+    var min = n ? Math.min.apply(null, prices) : null;
+    var max = n ? Math.max.apply(null, prices) : null;
+    var tiles = [
+      { label: 'Listings', value: n.toLocaleString('en-US') },
+      { label: 'Median rent', value: med != null ? fmt$(med) : '—' },
+      { label: 'Average rent', value: avg != null ? fmt$(avg) : '—' },
+      { label: 'Range', value: min != null ? fmt$(min) + ' – ' + fmt$(max) : '—' },
+    ];
+    els.tiles.innerHTML = tiles.map(function (t) {
+      return '<div class="tile"><div class="label">' + t.label + '</div><div class="value">' + t.value + '</div></div>';
+    }).join('');
+  }
+
+  // ---------- Chart: median price by bedroom, DFW vs Charlotte ----------
+  function renderChart() {
+    var bedRange = [1, 2, 3, 4, 5];
+    var groups = bedRange.map(function (b) {
+      var dfw = DATA.filter(function (d) { return d.region === 'DFW' && d.beds === b; }).map(function (d) { return d.price; });
+      var clt = DATA.filter(function (d) { return d.region === 'Charlotte' && d.beds === b; }).map(function (d) { return d.price; });
+      return { bed: b, dfw: median(dfw), dfwN: dfw.length, clt: median(clt), cltN: clt.length };
+    });
+
+    var W = 680, H = 260, padL = 46, padR = 12, padT = 16, padB = 34;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var maxVal = Math.max.apply(null, groups.flatMap(function (g) { return [g.dfw || 0, g.clt || 0]; })) * 1.15;
+
+    function y(v) { return padT + plotH - (v / maxVal) * plotH; }
+
+    var svg = els.chart;
+    var parts = [];
+
+    // gridlines + y labels
+    var steps = 4;
+    for (var i = 0; i <= steps; i++) {
+      var val = (maxVal / steps) * i;
+      var yy = y(val);
+      parts.push('<line class="gridline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '"></line>');
+      parts.push('<text class="axis-label" x="' + (padL - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + (val >= 1000 ? '$' + Math.round(val / 1000) + 'k' : '$' + Math.round(val)) + '</text>');
+    }
+    parts.push('<line class="baseline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + y(0) + '" y2="' + y(0) + '"></line>');
+
+    var groupW = plotW / groups.length;
+    var barW = Math.min(30, groupW * 0.28);
+    var gap = 6;
+
+    groups.forEach(function (g, gi) {
+      var cx = padL + groupW * gi + groupW / 2;
+      if (g.dfwN) {
+        var x1 = cx - gap / 2 - barW;
+        var yv1 = y(g.dfw);
+        parts.push('<rect class="bar-dfw" x="' + x1 + '" y="' + yv1 + '" width="' + barW + '" height="' + (y(0) - yv1) + '" rx="3"></rect>');
+        parts.push('<text class="valtag" x="' + (x1 + barW / 2) + '" y="' + (yv1 - 6) + '" text-anchor="middle">' + fmt$(g.dfw) + '</text>');
+      }
+      if (g.cltN) {
+        var x2 = cx + gap / 2;
+        var yv2 = y(g.clt);
+        parts.push('<rect class="bar-clt" x="' + x2 + '" y="' + yv2 + '" width="' + barW + '" height="' + (y(0) - yv2) + '" rx="3"></rect>');
+        parts.push('<text class="valtag" x="' + (x2 + barW / 2) + '" y="' + (yv2 - 6) + '" text-anchor="middle">' + fmt$(g.clt) + '</text>');
+      }
+      parts.push('<text class="axis-label" x="' + cx + '" y="' + (y(0) + 20) + '" text-anchor="middle">' + g.bed + ' bd</text>');
+    });
+
+    svg.innerHTML = parts.join('');
+  }
+
+  // ---------- Neighborhoods: bubble map + cards, clickable to filter ----------
+  function renderNeighborhoods() {
+    var rows = baseFiltered();
+    var clusters = clusterNeighborhoods(rows);
+    var regionsPresent = Array.from(new Set(clusters.map(function (c) { return c.region; })));
+
+    var W = 680, H = 260;
+    var parts = [];
+
+    function drawRegionMap(regionClusters, x0, x1, colorClass) {
+      if (!regionClusters.length) return;
+      var pad = 22;
+      var lats = regionClusters.map(function (c) { return c.lat; });
+      var lons = regionClusters.map(function (c) { return c.lon; });
+      var latMin = Math.min.apply(null, lats), latMax = Math.max.apply(null, lats);
+      var lonMin = Math.min.apply(null, lons), lonMax = Math.max.apply(null, lons);
+      var latSpan = Math.max(latMax - latMin, 0.01), lonSpan = Math.max(lonMax - lonMin, 0.01);
+      function px(lon) { return x0 + pad + ((lon - lonMin) / lonSpan) * (x1 - x0 - pad * 2); }
+      function py(lat) { return pad + (1 - (lat - latMin) / latSpan) * (H - pad * 2); }
+
+      var maxCount = Math.max.apply(null, regionClusters.map(function (c) { return c.listings.length; }));
+      regionClusters.forEach(function (c) {
+        var r = 9 + Math.sqrt(c.listings.length / maxCount) * 20;
+        var cx = px(c.lon), cy = py(c.lat);
+        var isSelected = state.hood && state.hood.region === c.region && state.hood.key === c.key;
+        var isDimmed = state.hood && !isSelected;
+        parts.push('<circle class="hood-bubble ' + colorClass + (isDimmed ? ' dimmed' : '') + '" data-region="' + c.region + '" data-key="' + c.key + '" cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r.toFixed(1) + '"' + (isSelected ? ' stroke="var(--text-primary)" stroke-width="3"' : '') + '></circle>');
+        if (r >= 11) {
+          parts.push('<text class="hood-count" x="' + cx.toFixed(1) + '" y="' + (cy + 4).toFixed(1) + '" font-size="12">' + c.listings.length + '</text>');
+        }
+      });
+    }
+
+    if (regionsPresent.length === 2) {
+      drawRegionMap(clusters.filter(function (c) { return c.region === 'DFW'; }), 0, W / 2, 'bar-dfw');
+      drawRegionMap(clusters.filter(function (c) { return c.region === 'Charlotte'; }), W / 2, W, 'bar-clt');
+      parts.push('<line class="gridline" x1="' + (W / 2) + '" x2="' + (W / 2) + '" y1="8" y2="' + (H - 8) + '"></line>');
+      parts.push('<text class="axis-label" x="12" y="16" font-weight="700">DFW</text>');
+      parts.push('<text class="axis-label" x="' + (W / 2 + 12) + '" y="16" font-weight="700">Charlotte</text>');
+    } else if (regionsPresent.length === 1) {
+      var colorClass = regionsPresent[0] === 'DFW' ? 'bar-dfw' : 'bar-clt';
+      drawRegionMap(clusters, 0, W, colorClass);
+    }
+
+    els.mapChart.innerHTML = parts.join('');
+    Array.prototype.forEach.call(els.mapChart.querySelectorAll('.hood-bubble'), function (el) {
+      el.addEventListener('click', function () { toggleHood(el.getAttribute('data-region'), el.getAttribute('data-key')); });
+    });
+
+    var sorted = clusters.slice().sort(function (a, b) { return b.listings.length - a.listings.length; }).slice(0, 12);
+    var cardsHtml = sorted.map(function (c) {
+      var prices = c.listings.map(function (d) { return d.price; });
+      var med = median(prices);
+      var isSelected = state.hood && state.hood.region === c.region && state.hood.key === c.key;
+      var isClt = c.region === 'Charlotte';
+      return '<button class="hood-card' + (isClt ? ' clt' : '') + '" aria-pressed="' + (isSelected ? 'true' : 'false') + '" data-region="' + c.region + '" data-key="' + c.key + '">' +
+        '<div class="hood-name"><span>' + c.name + '</span><span class="hood-badge' + (isClt ? ' clt' : '') + '">' + c.listings.length + '</span></div>' +
+        '<div class="hood-stats">Median ' + fmt$(med) + ' · ' + c.listings[0].city + '</div>' +
+        '</button>';
+    }).join('');
+    var clearHtml = state.hood ? '<button class="hood-clear" id="hoodClear">Show all neighborhoods ×</button>' : '';
+    els.hoodGrid.innerHTML = cardsHtml + clearHtml;
+
+    Array.prototype.forEach.call(els.hoodGrid.querySelectorAll('.hood-card'), function (el) {
+      el.addEventListener('click', function () { toggleHood(el.getAttribute('data-region'), el.getAttribute('data-key')); });
+    });
+    var clearBtn = document.getElementById('hoodClear');
+    if (clearBtn) clearBtn.addEventListener('click', function () { state.hood = null; render(); });
+
+    els.neighborhoodNote.textContent = clusters.length
+      ? '— ' + clusters.length + ' cluster' + (clusters.length === 1 ? '' : 's') + ' within about a third of a mile of each other · click one to filter'
+      : '— no coordinates in range for the current filters';
+  }
+
+  function toggleHood(region, key) {
+    if (state.hood && state.hood.region === region && state.hood.key === key) { state.hood = null; }
+    else { state.hood = { region: region, key: key }; }
+    render();
+  }
+
+  // ---------- Trend: median price per snapshot date, by region, respecting bed/bath filter ----------
+  function renderTrend() {
+    var byRegionDate = {};
+    ALL_LISTINGS.forEach(function (d) {
+      if (d.beds == null || !state.beds.has(d.beds)) return;
+      if (d.baths == null || !state.baths.has(d.baths)) return;
+      if (!state.cities.has(d.city)) return;
+      var key = d.region + '|' + d.date;
+      (byRegionDate[key] = byRegionDate[key] || []).push(d.price);
+    });
+
+    var series = { DFW: [], Charlotte: [] };
+    Object.keys(byRegionDate).forEach(function (key) {
+      var parts = key.split('|'), region = parts[0], date = parts[1];
+      if (!series[region]) return;
+      series[region].push({ date: date, value: median(byRegionDate[key]), n: byRegionDate[key].length });
+    });
+    Object.keys(series).forEach(function (r) { series[r].sort(function (a, b) { return a.date < b.date ? -1 : 1; }); });
+
+    var allDates = Array.from(new Set(ALL_LISTINGS.map(function (d) { return d.date; }))).sort();
+    var maxPoints = Math.max(series.DFW.length, series.Charlotte.length);
+
+    if (maxPoints < 2) {
+      els.trendChart.innerHTML = '';
+      els.trendNote.textContent = 'Only ' + allDates.length + ' snapshot' + (allDates.length === 1 ? '' : 's') + ' so far — the trend line fills in as weekly snapshots accumulate.';
+      return;
+    }
+    els.trendNote.textContent = allDates.length + ' snapshots from ' + allDates[0] + ' to ' + allDates[allDates.length - 1] + '.';
+
+    var W = 680, H = 220, padL = 50, padR = 16, padT = 16, padB = 30;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var allVals = series.DFW.concat(series.Charlotte).map(function (p) { return p.value; });
+    var maxVal = Math.max.apply(null, allVals) * 1.15;
+    var minVal = 0;
+
+    function x(i) { return padL + (allDates.length > 1 ? (i / (allDates.length - 1)) * plotW : plotW / 2); }
+    function y(v) { return padT + plotH - ((v - minVal) / (maxVal - minVal)) * plotH; }
+
+    var parts = [];
+    var steps = 4;
+    for (var i = 0; i <= steps; i++) {
+      var val = (maxVal / steps) * i;
+      var yy = y(val);
+      parts.push('<line class="gridline" x1="' + padL + '" x2="' + (W - padR) + '" y1="' + yy + '" y2="' + yy + '"></line>');
+      parts.push('<text class="axis-label" x="' + (padL - 8) + '" y="' + (yy + 4) + '" text-anchor="end">' + (val >= 1000 ? '$' + Math.round(val / 1000) + 'k' : '$' + Math.round(val)) + '</text>');
+    }
+
+    allDates.forEach(function (d, i) {
+      if (i === 0 || i === allDates.length - 1 || allDates.length <= 6) {
+        parts.push('<text class="axis-label" x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + d.slice(5) + '</text>');
+      }
+    });
+
+    function drawSeries(pts, colorClass, dotClass) {
+      if (pts.length < 1) return;
+      var coords = pts.map(function (p) {
+        var idx = allDates.indexOf(p.date);
+        return [x(idx), y(p.value)];
+      });
+      if (coords.length >= 2) {
+        var d = coords.map(function (c, i) { return (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1); }).join(' ');
+        parts.push('<path class="' + colorClass + '" d="' + d + '"></path>');
+      }
+      coords.forEach(function (c, i) {
+        parts.push('<circle class="' + dotClass + '" cx="' + c[0] + '" cy="' + c[1] + '" r="4"></circle>');
+      });
+      // Label the last point
+      var last = coords[coords.length - 1];
+      parts.push('<text class="valtag" x="' + last[0] + '" y="' + (last[1] - 10) + '" text-anchor="middle">' + fmt$(pts[pts.length - 1].value) + '</text>');
+    }
+
+    drawSeries(series.DFW, 'line-dfw', 'dot-dfw');
+    drawSeries(series.Charlotte, 'line-clt', 'dot-clt');
+
+    els.trendChart.innerHTML = parts.join('');
+  }
+
+  // ---------- Table ----------
+  function renderTable() {
+    var rows = filtered();
+    els.tableCount.textContent = '(' + rows.length + ')';
+
+    var key = state.sortKey, dir = state.sortDir === 'asc' ? 1 : -1;
+    rows = rows.slice().sort(function (a, b) {
+      var av = a[key], bv = b[key];
+      if (typeof av === 'string') return av.localeCompare(bv) * dir;
+      av = av == null ? -Infinity : av; bv = bv == null ? -Infinity : bv;
+      return (av - bv) * dir;
+    });
+
+    if (!rows.length) {
+      els.tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No listings match these filters.</td></tr>';
+      return;
+    }
+
+    els.tbody.innerHTML = rows.map(function (d) {
+      var tagClass = CITY_COLOR[d.city] === 'clt' ? 'clt' : 'dfw';
+      return '<tr>' +
+        '<td><span class="region-tag ' + tagClass + '"><i></i>' + regionLabels[d.region] + '</span></td>' +
+        '<td>' + d.city + '</td>' +
+        '<td class="addr">' + d.address + '</td>' +
+        '<td class="price">' + fmt$(d.price) + '</td>' +
+        '<td class="num">' + (d.beds != null ? d.beds : '—') + '</td>' +
+        '<td class="num">' + (d.baths != null ? d.baths : '—') + '</td>' +
+        '<td class="num">' + (d.sqft != null ? Math.round(d.sqft).toLocaleString('en-US') : '—') + '</td>' +
+        '<td class="num">' + (d.dom != null ? d.dom : '—') + '</td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function render() {
+    renderNeighborhoods();
+    renderTiles(filtered());
+    renderTable();
+    renderTrend();
+  }
+
+  renderChart();
+  render();
+})();
+</script>
